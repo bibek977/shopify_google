@@ -1,9 +1,11 @@
 import React from 'react'
-import { LegacyCard,List, Text } from '@shopify/polaris'
+import { LegacyCard,List, Page, Text } from '@shopify/polaris'
 import { footer_data } from './FooterData'
 
 const Footer = () => {
   return (
+    <Page fullWidth>
+
     <LegacyCard sectioned>
         <LegacyCard.Section title="Setup Instructions:">
                 <List type='number'>
@@ -17,6 +19,8 @@ const Footer = () => {
 
         </LegacyCard.Section>
     </LegacyCard>
+
+    </Page>
   )
 }
 

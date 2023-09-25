@@ -1,0 +1,27 @@
+.swiper-custom{
+    position: relative;
+}
+.swiper-button-prev{
+    color: black;
+    position: absolute;
+    top: 150px;
+    left: -20px;
+}
+
+.swiper-button-next{
+    color: black;
+    position: absolute;
+    top: 150px;
+    right: -10px;
+}
+
+.swiper-pagination-bullet-active{
+    color: black;
+    background-color: black;
+}
+
+.swiper-pagination{
+    position: absolute;
+    top: 292px !important;
+    /* right: 50px; */
+}
