@@ -1,5 +1,6 @@
 import React from 'react'
 import { Card,LegacyStack,Button,Text, VerticalStack} from '@shopify/polaris'
+import Slider4 from '../components/Slider4'
 
 const Badge4 = () => {
   return (
@@ -26,7 +27,7 @@ const Badge4 = () => {
             {/* <CoverCard2></CoverCard2> */}
           </div>
           <div>
-            {/* <Slider4></Slider4> */}
+            <Slider4></Slider4>
           </div>
         </div>
 

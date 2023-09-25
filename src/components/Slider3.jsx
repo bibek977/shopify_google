@@ -12,7 +12,7 @@ import CardItem from './CardItem'
 import '../components/SliderContainer.css'
 // import { Button } from 'react-bootstrap';
 
-const Slider2 = () => {
+const Slider3 = () => {
   return (
     <div className='swiper-custom'>
 <Swiper
@@ -67,4 +67,4 @@ const Slider2 = () => {
   )
 }
 
-export default Slider2
+export default Slider3
