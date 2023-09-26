@@ -12,13 +12,13 @@ import CustomCard from '../components/CustomCard'
 
 const SwiperContainer = (props) => {
   const {data} = props
-  console.log(props.data)
+  // console.log(props.data)
   return (
-    <div className='swiper-custom'>
+    <div className='swiper-custom mx-5'>
 <Swiper
       modules={[Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={20}
-      slidesPerView={3}
+      slidesPerView={2}
       navigation = {{clickable:true,nextEl:".swiper-next-1", prevEl:".swiper-prev-1"}}
       pagination={{ clickable: true, el:".swiper-pagination-1" }}
       onSwiper={(swiper) => console.log(swiper)}

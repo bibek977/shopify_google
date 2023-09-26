@@ -5,14 +5,14 @@
     color: black;
     position: absolute;
     top: 150px;
-    left: -20px;
+    left: -40px;
 }
 
 .swiper-button-next{
     color: black;
     position: absolute;
     top: 150px;
-    right: -10px;
+    right: -40px;
 }
 
 .swiper-pagination-bullet-active{
@@ -22,6 +22,6 @@
 
 .swiper-pagination{
     position: absolute;
-    top: 292px !important;
+    top: 275px !important;
     /* right: 50px; */
 }

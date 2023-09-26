@@ -23,7 +23,7 @@ export const Connect = () => {
                 </LegacyStack>
             </LegacyStack.Item>
             <LegacyStack.Item>
-                <Button destructive>Connect</Button>
+                <Button destructive>Disconnect</Button>
             </LegacyStack.Item>
         </LegacyStack>
     </Card>

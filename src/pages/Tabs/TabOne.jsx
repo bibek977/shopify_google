@@ -32,7 +32,7 @@ const TabOne = () => {
              title={preview('Preview')}
             //  fullWidth
              >
-              {/* <CardContainer></CardContainer> */}
+              <CardContainer></CardContainer>
               {/* <SliderContainer></SliderContainer> */}
             </Page>
           </div>
