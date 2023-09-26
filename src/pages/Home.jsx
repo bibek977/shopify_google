@@ -22,7 +22,7 @@ const Home = () => {
       <LegacyStack distribution='fill'><Icon
       source={ChevronRightMinor}
       color="base"
-    /><Text>{title}</Text>
+    /><Text><h5>{title}</h5></Text>
 </LegacyStack>
     )
   } 

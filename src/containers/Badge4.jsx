@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card,LegacyStack,Button,Text, VerticalStack} from '@shopify/polaris'
 import Slider4 from '../components/Slider4'
+import CoverCard2 from '../components/CoverCard2'
 
 const Badge4 = () => {
   return (
@@ -23,9 +24,12 @@ const Badge4 = () => {
       <Card>
 
         <div>
+          <Card background='bg-subdued'>
+
           <div className='d-flex justify-content-start align-items-center'>
-            {/* <CoverCard2></CoverCard2> */}
+            <CoverCard2></CoverCard2>
           </div>
+          </Card>
           <div>
             <Slider4></Slider4>
           </div>

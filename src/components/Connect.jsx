@@ -1,11 +1,11 @@
-import { Button, LegacyCard, LegacyStack, Text, Thumbnail } from '@shopify/polaris'
+import { Button, LegacyCard, LegacyStack, Text, Thumbnail,Card } from '@shopify/polaris'
 import React from 'react'
 import '../components/Connect.css'
 
 export const Connect = () => {
   return (
-    <LegacyCard sectioned>
-        <LegacyStack>
+    <Card background='bg-subdued'>
+        <LegacyStack alignment='center'>
             <LegacyStack.Item fill>
                 <LegacyStack>
 
@@ -17,8 +17,8 @@ export const Connect = () => {
                 ></Thumbnail>
                 </LegacyStack.Item>
                 <LegacyStack.Item>
-                    <Text variant='headingLg'>Nerd Platoon Pvt. Ltd</Text>
-                    <Text>SallaGhari, Bhaktapur 44800, Nepal</Text>
+                    <Text><b>Nerd Platoon Pvt. Ltd</b></Text>
+                    <Text><small>SallaGhari, Bhaktapur 44800, Nepal</small></Text>
                 </LegacyStack.Item>
                 </LegacyStack>
             </LegacyStack.Item>
@@ -26,6 +26,6 @@ export const Connect = () => {
                 <Button destructive>Connect</Button>
             </LegacyStack.Item>
         </LegacyStack>
-    </LegacyCard>
+    </Card>
   )
 }

@@ -2,6 +2,7 @@ import { Page, Button, Divider, LegacyStack, Card } from '@shopify/polaris'
 import React from 'react'
 import CoverCard from '../components/CoverCard'
 import SlideContainer from '../components/SlideContainer'
+import { FormSettings } from '../components/FormSettings'
 // import FormInput from '../components/FormInput'
 // import FormCheckBox from '../components/FormCheckBox'
 
@@ -39,15 +40,10 @@ const Tab3 = () => {
       >
 
       <Divider borderColor='border-inverse'></Divider>
-      <LegacyStack >
-        <LegacyStack.Item fill >
-          {/* <FormInput></FormInput> */}
-        </LegacyStack.Item>
-        <LegacyStack.Item>
-          {/* <FormCheckBox></FormCheckBox> */}
-        </LegacyStack.Item>
-      </LegacyStack>
 
+      <FormSettings></FormSettings>
+
+      <Divider borderColor='border-inverse'></Divider>
     </Page>
     </Card>
 

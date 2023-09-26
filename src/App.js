@@ -1,11 +1,13 @@
 import './App.css';
-import Home from './pages/Home';
+// import Home from './pages/Home';
+import Main from './pages/HomePage/Main';
 
 function App() {
   document.title = "Google Reviews"
   return (
     <>
-    <Home></Home>
+    {/* <Home></Home> */}
+    <Main></Main>
     </>
 
   );

@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.Polaris-LegacyTabs__Title{
+  padding: 0 !important;
+}
+
+.Polaris-Layout__Section:has(.bg-img){
+  background-image: url("https://google-review.entanglecommerce.com/assets/transparent_image-91577041.png");
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-size: cover;
+}

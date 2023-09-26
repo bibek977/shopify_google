@@ -1,19 +1,19 @@
 import { Button, LegacyCard, LegacyStack, Text,Card } from '@shopify/polaris'
 import React from 'react'
 
-export const Update = () => {
+export const Setup = () => {
   return (
     <Card>
         <LegacyStack alignment='center'>
             <LegacyStack.Item fill>
                 <Text>
-                  <small>
-                You can update reviews once in every 24 hour (Last Updated: Not updated yet)
-                  </small>
+                  <b className='fs-5'>
+                  Setup your widget directly to your store
+                  </b>
                 </Text>
             </LegacyStack.Item>
             <LegacyStack.Item>
-                <Button >Update Now</Button>
+                <Button primary>Setup</Button>
             </LegacyStack.Item>
         </LegacyStack>
     </Card>
