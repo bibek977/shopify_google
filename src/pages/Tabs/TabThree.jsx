@@ -1,8 +1,34 @@
+import {  Layout, Page,Text  } from '@shopify/polaris'
 import React from 'react'
+import CardContainer from '../../containers/CardContainer'
 
 const TabThree = () => {
+  const preview = (text)=>{
+    return(
+      <Text>
+        <p className='fw-medium'>{text}</p>
+      </Text>
+    )
+  }
   return (
-    <div>TabThree</div>
+    <>
+       <Page
+      fullWidth
+    >
+      <Layout>
+        <Layout.Section>
+          <div className="bg-img mb-5">
+            <Page
+             title={preview('Preview')}
+             fullWidth
+             >
+              <CardContainer></CardContainer>
+            </Page>
+          </div>
+        </Layout.Section>
+      </Layout>
+    </Page>
+    </>
   )
 }
 

@@ -17,7 +17,7 @@ const TabOne = () => {
   return (
     <>
     <Page
-      // fullWidth
+      fullWidth
     >
       <Layout>
         <Layout.Section>
@@ -27,10 +27,10 @@ const TabOne = () => {
           <Update></Update>
         </Layout.Section>
         <Layout.Section>
-          <div className="bg-img">
+          <div className="bg-img mb-5">
             <Page
              title={preview('Preview')}
-            //  fullWidth
+             fullWidth
              >
               <CardContainer></CardContainer>
               {/* <SliderContainer></SliderContainer> */}
@@ -40,7 +40,9 @@ const TabOne = () => {
       </Layout>
     </Page>
 
-    <Page>
+    <Page
+    fullWidth
+    >
 
       <Layout>
         <Layout.Section>

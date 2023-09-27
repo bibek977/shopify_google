@@ -1,7 +1,7 @@
 import { HorizontalStack, VerticalStack,Text } from '@shopify/polaris'
 import React from 'react'
 
-const CoverCard2 = (props) => {
+const CoverCard3 = (props) => {
   const {data} = props 
 
   const stars = Array.from({ length: data[0]?.rate }, (_, index) => (
@@ -15,23 +15,27 @@ const CoverCard2 = (props) => {
   return (
     
         <VerticalStack align='center'>
+          <div className="img p-1">
+            <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" width="80px" alt="" />
+            <span className='p-2 fs-4'>Rating</span>
+          </div>
+          <HorizontalStack>
           <Text>
-            <h4 className='text-center'>Excellent</h4>
+            <h4 className='text-center p-1'>{data[0]?.rate}</h4>
           </Text>
-          <div className='text-center'>
+          <div className='text-center '>
             {stars}
           </div>
 
           <Text>
-            <h5 className='text-center'>{data[0]?.person} Google reviews</h5>
+            <p className='text-center p-1'>{data[0]?.person} reviews</p>
           </Text>
-          <div className="img text-center">
-            <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" width="80px" alt="" />
-          </div>
+          </HorizontalStack>
+
           
         </VerticalStack>    
 
   )
 }
 
-export default CoverCard2
+export default CoverCard3

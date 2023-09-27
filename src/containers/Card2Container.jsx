@@ -1,12 +1,12 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import SwiperContainer from './SwiperContainer'
+import Swiper2Container from './Swiper2Container'
 import OffieceData from '../components/OffieceData'
 import CoverCard2 from '../components/CoverCard2'
 import { Card } from '@shopify/polaris'
 import CoverCard3 from '../components/CoverCard3'
 
-const CardContainer = () => {
+const Card2Container = () => {
     const [apiData,setApiData] = useState([])
     const [officeData,setOfficeData] = useState([])
 
@@ -30,13 +30,13 @@ const CardContainer = () => {
         <div className='row'>
           <div className='d-flex justify-content-center align-items-center col-3'>
 
-        <OffieceData data={officeData}></OffieceData>
-        {/* <CoverCard2 data={officeData}></CoverCard2> */}
+        {/* <OffieceData data={officeData}></OffieceData> */}
+        <CoverCard2 data={officeData}></CoverCard2>
         {/* <CoverCard3 data={officeData}></CoverCard3> */}
           </div>
           <div className='col-9'>
 
-        <SwiperContainer data={apiData}></SwiperContainer>
+        <Swiper2Container data={apiData}></Swiper2Container>
           </div>
         </div>
     </Card>
@@ -44,4 +44,4 @@ const CardContainer = () => {
   )
 }
 
-export default CardContainer
+export default Card2Container

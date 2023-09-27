@@ -1,5 +1,5 @@
 import React from 'react'
-import { HorizontalStack, Thumbnail, VerticalStack,Text } from '@shopify/polaris'
+import { Button, LegacyCard, LegacyStack, Text, Thumbnail,Card } from '@shopify/polaris'
 
 const OffieceData = (props) => {
   const {data} = props 
@@ -15,33 +15,25 @@ const OffieceData = (props) => {
   ));
   return (
     <>
-        <HorizontalStack>
-          <div className="img px-2 pb-3 d-flex justify-content-center align-items-center">
+        <div className='d-flex align-item-center justify-content-center' style={{width:'17rem'}}>
+                <div className='d-flex flex-row'>
+                <div className='d-flex '>
 
-        <Thumbnail 
-            source={data[0]?.photo}
-            size='large'
-            >
-        </Thumbnail> 
-          </div>
-        <VerticalStack>
-          <Text>
-            <h4>{data[0]?.title}</h4>
-          </Text>
-          <HorizontalStack>
-          <div >
-          <Text variant="bodyMd" as="h5">
-            {stars}
-          </Text>
+                <Thumbnail 
+                source={data[0]?.photo}
+                size='medium'
+                ></Thumbnail>
+                </div>
+                <div className='d-flex flex-column'>
+                    <Text><b>{data[0]?.title}</b></Text>
+                    <Text><small>{stars}</small></Text>
+                    <Text>
+                  <p>{data[0]?.person} Google reviews</p>
+                </Text>
+                </div>
+
+                </div>
         </div>
-          </HorizontalStack>
-
-          <Text>
-            <h5>{data[0]?.person}Google reviews</h5>
-          </Text>
-          
-        </VerticalStack>    
-        </HorizontalStack>
     </>
   )
 }

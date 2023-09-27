@@ -12,6 +12,12 @@ const CustomCard = (props) => {
       aria-hidden="true"
     ></i>
   ));
+  const truc = (desc,len)=>{
+    return(
+      
+      desc.slice(0,len)+ (desc.length>len?"...":"")
+    )
+  }
   return (
     <>
       {/* <h1>{data?.name}</h1> */}
@@ -48,10 +54,10 @@ const CustomCard = (props) => {
         </div>
         <div>
           {/* <Text variant="bodyMd" as="p"> */}
-            <p className='text-truncate'>
-            {/* <p> */}
-
-            {data.description}      
+            {/* <p className='text-truncate'> */}
+            <p>
+              {truc(data.description,100)}
+            {/* {data.description}       */}
             </p>
           {/* </Text> */}
         </div>

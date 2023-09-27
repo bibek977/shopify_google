@@ -8,7 +8,7 @@ const Main = () => {
     <>
         <Page
         // title={title_text}
-        // fullWidth
+        fullWidth
         >
           <TabHome></TabHome>
         </Page>

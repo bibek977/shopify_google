@@ -10,7 +10,7 @@ import 'swiper/css/scrollbar';
 import '../components/SliderContainer.css'
 import CustomCard from '../components/CustomCard'
 
-const SwiperContainer = (props) => {
+const Swiper2Container = (props) => {
   const {data} = props
   // console.log(props.data)
   return (
@@ -19,8 +19,8 @@ const SwiperContainer = (props) => {
       modules={[Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={20}
       slidesPerView={3}
-      navigation = {{clickable:true,nextEl:".swiper-next-1", prevEl:".swiper-prev-1"}}
-      pagination={{ clickable: true, el:".swiper-pagination-1" }}
+      navigation = {{clickable:true,nextEl:".swiper-next-2", prevEl:".swiper-prev-2"}}
+      pagination={{ clickable: true, el:".swiper-pagination-2" }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
       >
@@ -37,14 +37,14 @@ const SwiperContainer = (props) => {
 
 
     </Swiper>
-        <div className='swiper-button-next swiper-next-1'>
+        <div className='swiper-button-next swiper-next-2'>
 
         </div>
-        <div className='swiper-button-prev swiper-prev-1'>
+        <div className='swiper-button-prev swiper-prev-2'>
 
         </div>
 
-        <div className="swiper-pagination swiper-pagination-1">
+        <div className="swiper-pagination swiper-pagination-2">
             <span className="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
             <span className="swiper-pagination-bullet"></span>
             <span className="swiper-pagination-bullet"></span>
@@ -55,4 +55,4 @@ const SwiperContainer = (props) => {
   )
 }
 
-export default SwiperContainer
+export default Swiper2Container
