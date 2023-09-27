@@ -26,4 +26,12 @@ code {
 #CardBody{
   background-color: rgb(239, 239, 239);
 }
+.backdrop-color{
+  opacity: 0 !important;
+}
 
+@media (min-width:900px) {
+  .office-width{
+    width: 50%;
+  }
+}

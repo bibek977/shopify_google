@@ -12,18 +12,18 @@ const Swiper4Container = (props) => {
 
 
       {/* <Card > */}
-        <Grid >
+        <div className='row' >
         {
           data?.map((e,i)=>{
             return(
-            <Grid.Cell columnSpan={{xs: 4, sm: 4, md: 4, lg: 4, xl: 4}}>
+            <div className='col-xl-4 col-lg-6 col-sm-12'>
                 <CustomCard data={e} key={i}></CustomCard>
-            </Grid.Cell>
+            </div>
             )
           })
         }
          
-        </Grid>
+        </div>
       {/* </Card> */}
 
       

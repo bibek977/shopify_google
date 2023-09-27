@@ -56,7 +56,7 @@ const CustomCard = (props) => {
           {/* <Text variant="bodyMd" as="p"> */}
             {/* <p className='text-truncate'> */}
             <p>
-              {truc(data.description,100)}
+              {truc(data.description,70)}
             {/* {data.description}       */}
             </p>
           {/* </Text> */}

@@ -23,6 +23,20 @@ const Swiper3Container = (props) => {
       pagination={{ clickable: true, el:".swiper-pagination-3" }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
+      breakpoints={{
+        1200:{
+          slidesPerView : 3
+        },
+        900:{
+          slidesPerView:2
+        },
+        700:{
+          slidesPerView:2
+        },
+        0:{
+          slidesPerView:1
+        }
+      }}
       >
         {
           data?.map((e,i)=>{

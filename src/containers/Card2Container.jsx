@@ -28,13 +28,13 @@ const Card2Container = () => {
 
     <Card>
         <div className='row'>
-          <div className='d-flex justify-content-center align-items-center col-3'>
+          <div className='d-flex justify-content-center align-items-center col-lg-3 col-12'>
 
         {/* <OffieceData data={officeData}></OffieceData> */}
         <CoverCard2 data={officeData}></CoverCard2>
         {/* <CoverCard3 data={officeData}></CoverCard3> */}
           </div>
-          <div className='col-9'>
+          <div className='col-lg-9 col-12'>
 
         <Swiper2Container data={apiData}></Swiper2Container>
           </div>

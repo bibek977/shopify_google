@@ -4,6 +4,8 @@ import Review1Container from '../../containers/Review1Container'
 import Review2Container from '../../containers/Review2Container'
 import Review3Container from '../../containers/Review3Container'
 import Review4Container from '../../containers/Review4Container'
+import Review5Container from '../../containers/Review5Container'
+import Review6Container from '../../containers/Review6Container'
 
 const TabTwo = () => {
   return (
@@ -31,6 +33,18 @@ const TabTwo = () => {
         </Layout.Section>
         <Layout.Section>
           <Review4Container></Review4Container>
+        </Layout.Section>
+        <Layout.Section>
+        <Divider borderColor='border-inverse'></Divider>
+        </Layout.Section>
+        <Layout.Section>
+          <Review5Container></Review5Container>
+        </Layout.Section>
+        <Layout.Section>
+        <Divider borderColor='border-inverse'></Divider>
+        </Layout.Section>
+        <Layout.Section>
+          <Review6Container></Review6Container>
         </Layout.Section>
         <Layout.Section>
         <Divider borderColor='border-inverse'></Divider>

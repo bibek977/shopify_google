@@ -16,12 +16,12 @@ const OffieceData = (props) => {
   return (
     <>
         <div className='d-flex align-item-center justify-content-center' style={{width:'17rem'}}>
-                <div className='d-flex flex-row'>
-                <div className='d-flex '>
+                <div className='d-flex flex-lg-column flex-md-row flex-xl-row'>
+                <div className=''>
 
                 <Thumbnail 
                 source={data[0]?.photo}
-                size='medium'
+                size='large'
                 ></Thumbnail>
                 </div>
                 <div className='d-flex flex-column'>
