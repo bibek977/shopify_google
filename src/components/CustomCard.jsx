@@ -44,7 +44,7 @@ const CustomCard = (props) => {
           </HorizontalStack>
           
           <div >
-            <Avatar src={google_logo} />
+            <Avatar size='small' source={google_logo} name='G' />
           </div>
         </HorizontalStack>
         <div >

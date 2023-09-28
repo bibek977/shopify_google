@@ -1,9 +1,16 @@
 import { Card, Page,Button,Divider, Form, FormLayout } from '@shopify/polaris'
-import React from 'react'
+import React, { useContext } from 'react'
 import FormInput from '../components/FormInput'
 import FormCheckBox from '../components/FormCheckBox'
+import { ButtonSelectContext } from '../components/ButtonSelect'
 
 const FormContainer = () => {
+    const {buttonStatus} = useContext(ButtonSelectContext)
+    const {selectedOptions} = useContext(ButtonSelectContext)
+    const postSettings = ()=>{
+        console.log(buttonStatus)
+        console.log(selectedOptions)
+    }
   return (
     <>
     <Form>
@@ -13,7 +20,7 @@ const FormContainer = () => {
                 <Page
                 fullWidth
                 title='Widgets Settings'
-                primaryAction={{content:"Update"}}
+                primaryAction={<Button primary onClick={postSettings()}>Update</Button>}
                 secondaryActions={<Button>Reset to default</Button>}
                 >
                 </Page>

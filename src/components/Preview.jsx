@@ -6,11 +6,17 @@ import Card3Container from '../containers/Card3Container'
 import Card4Container from '../containers/Card4Container'
 import Card5Container from '../containers/Card5Container'
 import Card6Container from '../containers/Card6Container'
+import WriteReview from './WriteReview'
+import ViewReviewAll from './ViewReviewAll'
 
 const Preview = () => {
     const {previewId} = useContext(PreviewCardContext)
   return (
     <>
+    <div style={{backgroundColor:'white'}} className='p-3'>
+
+        <WriteReview></WriteReview>
+
         {
             previewId === 1 ? (<CardContainer></CardContainer>) 
             : previewId === 2 ? (<Card2Container></Card2Container>)
@@ -20,6 +26,11 @@ const Preview = () => {
             : previewId === 6 ? (<Card6Container></Card6Container>)
             :(<h1>Not Found</h1>)
         }
+
+        <ViewReviewAll></ViewReviewAll>
+
+</div>
+
     </>
   )
 }

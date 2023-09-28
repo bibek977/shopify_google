@@ -4,14 +4,14 @@ import Card5Container from './Card5Container'
 import {PreviewCardContext} from '../components/PreviewCard'
 
 const Review5Container = () => {
-  const {setPreviewId} = useContext(PreviewCardContext)
+  const {previewId,setPreviewId} = useContext(PreviewCardContext)
   return (
     <>
         <Page
         fullWidth
         title='Review with Floating'
         primaryAction={
-            <Button primary onClick={()=>setPreviewId(5)}>Select</Button>
+          <Button onClick={()=>setPreviewId(5)} disabled={previewId===5?true:false} primarySuccess={previewId===5?false:true}>{previewId===5?"Active":"Select"}</Button>
         }
         >
             <Card5Container></Card5Container>

@@ -4,14 +4,14 @@ import Card2Container from './Card2Container'
 import {PreviewCardContext} from '../components/PreviewCard'
 
 const Review2Container = () => {
-  const {setPreviewId} = useContext(PreviewCardContext)
+  const {previewId,setPreviewId} = useContext(PreviewCardContext)
   return (
     <>
         <Page
         fullWidth
         title='2. Review with Badge-II'
         primaryAction={
-            <Button primary onClick={()=>setPreviewId(2)}>Select</Button>
+          <Button onClick={()=>setPreviewId(2)} disabled={previewId===2?true:false} primarySuccess={previewId===2?false:true}>{previewId===2?"Active":"Select"}</Button>
         }
         >
             <Card2Container></Card2Container>

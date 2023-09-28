@@ -4,14 +4,14 @@ import Card4Container from './Card4Container'
 import {PreviewCardContext} from '../components/PreviewCard'
 
 const Review4Container = () => {
-  const {setPreviewId} = useContext(PreviewCardContext)
+  const {previewId,setPreviewId} = useContext(PreviewCardContext)
   return (
     <>
         <Page
         fullWidth
         title='4. Review with Grid'
         primaryAction={
-            <Button primary onClick={()=>setPreviewId(4)}>Select</Button>
+          <Button onClick={()=>setPreviewId(4)} disabled={previewId===4?true:false} primarySuccess={previewId===4?false:true}>{previewId===4?"Active":"Select"}</Button>
         }
         >
             <Card4Container></Card4Container>
