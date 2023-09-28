@@ -1,15 +1,17 @@
 import { Button, Page } from '@shopify/polaris'
-import React from 'react'
+import React, { useContext } from 'react'
 import Card5Container from './Card5Container'
+import {PreviewCardContext} from '../components/PreviewCard'
 
 const Review5Container = () => {
+  const {setPreviewId} = useContext(PreviewCardContext)
   return (
     <>
         <Page
         fullWidth
         title='Review with Floating'
         primaryAction={
-            <Button primary>Select</Button>
+            <Button primary onClick={()=>setPreviewId(5)}>Select</Button>
         }
         >
             <Card5Container></Card5Container>

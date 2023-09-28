@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { createContext, useState } from 'react'
 
-
-const PreviewCard = () => {
+export const PreviewCardContext = createContext()
+export const PreviewCardProvider = ({children}) => {
+  const [previewId, setPreviewId] = useState(1)
   return (
     <>
-        
+        <PreviewCardContext.Provider value={{previewId,setPreviewId}}>
+          {children}
+        </PreviewCardContext.Provider>
     </>
   )
 }
-
-export default PreviewCard

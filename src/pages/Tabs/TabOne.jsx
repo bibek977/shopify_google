@@ -2,8 +2,8 @@ import { Layout, Page,Text } from '@shopify/polaris'
 import React from 'react'
 import { Connect } from '../../components/Connect'
 import { Update } from '../../components/Update'
-import CardContainer from '../../containers/CardContainer'
 import Footer from '../../components/Footer'
+import Preview from '../../components/Preview'
 
 const TabOne = () => {
   const preview = (text)=>{
@@ -31,7 +31,8 @@ const TabOne = () => {
              title={preview('Preview')}
              fullWidth
              >
-              <CardContainer></CardContainer>
+              {/* <CardContainer></CardContainer> */}
+              <Preview></Preview>
             </Page>
           </div>
         </Layout.Section>
