@@ -1,4 +1,4 @@
-import { Button, LegacyCard, LegacyStack, Text,Card } from '@shopify/polaris'
+import { Button, LegacyStack, Text,Card } from '@shopify/polaris'
 import React from 'react'
 
 export const Update = () => {

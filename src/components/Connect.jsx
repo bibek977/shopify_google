@@ -1,6 +1,5 @@
-import { Button, LegacyCard, LegacyStack, Text, Thumbnail,Card } from '@shopify/polaris'
+import { Button, LegacyStack, Text, Thumbnail,Card } from '@shopify/polaris'
 import React from 'react'
-import '../components/Connect.css'
 
 export const Connect = () => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, LegacyCard, LegacyStack, Text, Thumbnail,Card } from '@shopify/polaris'
+import { Text, Thumbnail } from '@shopify/polaris'
 
 const OffieceData = (props) => {
   const {data} = props 

@@ -1,35 +1,18 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import OffieceData from '../components/OffieceData'
 import { Card,Text } from '@shopify/polaris'
 import Swiper5Container from './Swiper5Container'
 
-import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { ApiDataContext } from '../components/ContextData'
 
 
 function Card6Container() {
-  const [apiData,setApiData] = useState([])
-  const [officeData,setOfficeData] = useState([])
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-  useEffect(()=>{
-    const getApiData = ()=>{
-      axios
-        .get("http://127.0.0.1:8000/api/")
-        .then((r)=>{
-          console.log(r.data.company)
-          const {data} = r.data
-          setApiData(data)
-          setOfficeData(r?.data?.company)
-        })
-    }
-    getApiData()
-  },[])
-
+  const {apiData,officeData} = useContext(ApiDataContext)
   return (
     <>
     <Card>

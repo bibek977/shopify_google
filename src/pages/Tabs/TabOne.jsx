@@ -3,7 +3,6 @@ import React from 'react'
 import { Connect } from '../../components/Connect'
 import { Update } from '../../components/Update'
 import CardContainer from '../../containers/CardContainer'
-// import SliderContainer from '../../components/SlideContainer'
 import Footer from '../../components/Footer'
 
 const TabOne = () => {
@@ -33,7 +32,6 @@ const TabOne = () => {
              fullWidth
              >
               <CardContainer></CardContainer>
-              {/* <SliderContainer></SliderContainer> */}
             </Page>
           </div>
         </Layout.Section>

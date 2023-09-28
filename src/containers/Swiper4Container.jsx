@@ -1,6 +1,4 @@
-import { Grid } from '@shopify/polaris'
 import React from 'react'
-import "../components/slider4.css"
 import CustomCard from '../components/CustomCard'
 
 const Swiper4Container = (props) => {

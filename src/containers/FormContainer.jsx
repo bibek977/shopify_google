@@ -1,4 +1,4 @@
-import { Card, Page,Button,Divider, Form, FormLayout, HorizontalGrid, HorizontalStack } from '@shopify/polaris'
+import { Card, Page,Button,Divider, Form, FormLayout } from '@shopify/polaris'
 import React from 'react'
 import FormInput from '../components/FormInput'
 import FormCheckBox from '../components/FormCheckBox'

@@ -1,5 +1,3 @@
-
-
 const map = () => {
     return (
       <a style={{textDecoration:'none'}} href="https://www.google.com/maps/@27.9308066,6.7369589,3z?entry=ttu">Google Maps</a>

@@ -1,4 +1,4 @@
-import { Avatar, Box, Card, HorizontalStack, Text, VerticalStack } from '@shopify/polaris'
+import { Avatar, Box, HorizontalStack, Text } from '@shopify/polaris'
 import React from 'react'
 import { google_logo } from './LogoGoogle'
 

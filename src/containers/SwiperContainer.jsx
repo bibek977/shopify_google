@@ -12,7 +12,6 @@ import CustomCard from '../components/CustomCard'
 
 const SwiperContainer = (props) => {
   const {data} = props
-  // console.log(props.data)
   return (
     <div className='swiper-custom mx-5'>
 <Swiper

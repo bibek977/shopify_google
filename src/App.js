@@ -1,13 +1,14 @@
 import './App.css';
-// import Home from './pages/Home';
+import { ApiDataProvider } from './components/ContextData';
 import Main from './pages/HomePage/Main';
 
 function App() {
   document.title = "Google Reviews"
   return (
     <>
-    {/* <Home></Home> */}
-    <Main></Main>
+<ApiDataProvider>
+      <Main></Main>
+</ApiDataProvider>
     </>
 
   );

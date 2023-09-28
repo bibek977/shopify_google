@@ -1,5 +1,5 @@
 import React from 'react'
-import { LegacyCard,List, Page, Text,Card } from '@shopify/polaris'
+import { LegacyCard,List, Text,Card } from '@shopify/polaris'
 import { footer_data } from './FooterData'
 
 const Footer = () => {

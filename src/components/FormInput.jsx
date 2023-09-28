@@ -1,6 +1,5 @@
 import { Select, Text } from '@shopify/polaris';
 import React, { useState } from 'react';
-import '../components/form.css';
 
 const FormInput = () => {
   const options = {
