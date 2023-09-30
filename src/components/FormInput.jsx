@@ -3,7 +3,7 @@ import React, { useContext, useState } from 'react';
 import { ButtonSelectContext } from './ButtonSelect';
 
 const FormInput = () => {
-  const {selectedOptions,setSelectedOptions} = useContext(ButtonSelectContext)
+  // const {selectedOptions,setSelectedOptions} = useContext(ButtonSelectContext)
 
   const options = {
     rating: [
@@ -32,12 +32,12 @@ const FormInput = () => {
     ],
   };
 
-  // const [selectedOptions, setSelectedOptions] = useState({
-  //   rating: '1',
-  //   date: '1',
-  //   align: '1',
-  //   theme: '1',
-  // });
+  const [selectedOptions, setSelectedOptions] = useState({
+    rating: '1',
+    date: '1',
+    align: '1',
+    theme: '1',
+  });
 
   const handleSelectChange = (key, value) => {
     setSelectedOptions((prevOptions) => ({

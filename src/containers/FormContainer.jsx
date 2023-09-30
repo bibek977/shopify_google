@@ -25,12 +25,12 @@ const FormContainer = () => {
 
                         <div className='col-md-6 col-12'>
 
-                            {/* <FormInput></FormInput> */}
+                            <FormInput></FormInput>
                         </div>
 
 
                         <div className='col-md-6 col-12'>
-                            {/* <FormCheckBox></FormCheckBox> */}
+                            <FormCheckBox></FormCheckBox>
                         </div>
                 </div>
 
