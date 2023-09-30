@@ -3,6 +3,20 @@ import React from 'react'
 import { google_logo } from './LogoGoogle'
 
 const CustomCard = (props) => {
+  const settings = {
+    HideReviewsWithoutComments: true,
+    HideRatingText: false,
+    ShowReviewersPhoto: true,
+    ShowReviewersName: false,
+    ShowViewAllReviewsLink: false,
+    ShowWriteReviewButton: false,
+    AutoPlay: false,
+    EnableLink: false,
+    minratings: "1",
+    dateformat: "my",
+    align: "left",
+    theme: "dark",
+  }
   const {data} = props
   const stars = Array.from({ length: data.star }, (_, index) => (
     <i
@@ -18,23 +32,51 @@ const CustomCard = (props) => {
       desc.slice(0,len)+ (desc.length>len?"...":"")
     )
   }
+
+  let cardbody 
+  let text
+
+  if (settings.theme === 'dark') {
+    cardbody = {backgroundColor:'#303030'};
+    text = {color : '#fff'};
+  }
+  else if(settings.theme==='light') {
+    cardbody = {backgroundColor:'#efefef'};
+    text = {color : '#000'};
+  }
+  else if(settings.theme==='transparent'){
+  
+    cardbody={background:'#efefef'}
+    text={color:'#000'}
+ }
+ else if(settings.theme==='custom'){
+    cardbody={backgroundColor:settings.cardbody}
+    text={color:settings.text}
+ }
+
+  
+  let align = settings.align === 'center'?'text-center':settings.align==='right'?'text-end':'text-start'
+
   return (
     <>
-      {/* <h1>{data?.name}</h1> */}
       <Box id="CardBody">
-        <div className="p-3 mb-5 mt-2" style={{height:'250px'}} >
+        <div className="p-3 mb-5 mt-2" style={{...cardbody,height:'250px'}} >
         <HorizontalStack align="space-between">
           <HorizontalStack>
-          
+          {settings.ShowReviewersPhoto?
             <div >
               <Avatar size="medium" name={data.name} source={data.imageLink} />
             </div>
-            
-            <div className="mb-lg-2 mb-1 ms-1" >
+            : ""
+          }
+            <div className="mb-lg-2 mb-1 ms-1" style={text} >
+            {settings.ShowReviewersName?
               <Text as="p" variant="headingSm">
                 {data.name}
               </Text>
-
+              :
+              ""
+            }
              <div >
              <Text variant="bodySm" as="p">
                 {data.date}
@@ -47,20 +89,25 @@ const CustomCard = (props) => {
             <Avatar size='small' source={google_logo} name='G' />
           </div>
         </HorizontalStack>
-        <div >
+        <div className={align}>
           <Text variant="bodyMd" as="h5">
             {stars}
           </Text>
         </div>
-        <div>
-          {/* <Text variant="bodyMd" as="p"> */}
-            {/* <p className='text-truncate'> */}
-            <p>
-              {truc(data.description,70)}
-            {/* {data.description}       */}
-            </p>
-          {/* </Text> */}
-        </div>
+        {settings.HideRatingText?
+        ""
+        : 
+        settings.HideReviewsWithoutComments?
+        <div className={align}>
+
+          <p style={{...text}}>
+            {truc(data.description,70)}
+          </p>
+         </div>
+            : 
+            ""
+        }
+
         </div>
       </Box>
     </>

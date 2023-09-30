@@ -5,25 +5,25 @@ export const ButtonSelectContext = createContext()
 export const ButtonSelectProvider = ({children}) => {
 
   const initialCheckboxes = {
-    HideReviewsWithoutComments: false,
+    HideReviewsWithoutComments: true,
     HideRatingText: false,
-    ShowReviewersPhoto: false,
+    ShowReviewersPhoto: true,
     ShowReviewersName: false,
     ShowViewAllReviewsLink: false,
     ShowWriteReviewButton: false,
     AutoPlay: false,
+    EnableLink: false,
+    minratings: "1",
+    dateformat: "my",
+    align: "left",
+    theme: "dark",
   };
   
-  const [buttonStatus,setButtonStatus] = useState(initialCheckboxes)
-  const [selectedOptions, setSelectedOptions] = useState({
-    rating: '1',
-    date: '1',
-    align: '1',
-    theme: '1',
-  });
+  const [settings,setSettings] = useState(initialCheckboxes)
+
   return (
     <>
-      <ButtonSelectContext.Provider value={{buttonStatus,setButtonStatus,initialCheckboxes,selectedOptions,setSelectedOptions}}>
+      <ButtonSelectContext.Provider value={{settings,setSettings}}>
         {children}
       </ButtonSelectContext.Provider>
     </>
