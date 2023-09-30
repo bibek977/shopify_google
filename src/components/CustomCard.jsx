@@ -1,24 +1,27 @@
 import { Avatar, Box, HorizontalStack, Text } from '@shopify/polaris'
-import React from 'react'
+import React, { useContext } from 'react'
 import { google_logo } from './LogoGoogle'
+import { ButtonSelectContext } from './ButtonSelect'
 
 const CustomCard = (props) => {
-  const settings = {
-    HideReviewsWithoutComments: true,
-    HideRatingText: false,
-    ShowReviewersPhoto: true,
-    ShowReviewersName: false,
-    ShowViewAllReviewsLink: false,
-    ShowWriteReviewButton: false,
-    AutoPlay: false,
-    EnableLink: false,
-    minratings: "1",
-    dateformat: "my",
-    align: "left",
-    theme: "dark",
-  }
+
+  const {settings} = useContext(ButtonSelectContext)
+  // const settings = {
+  //   HideReviewsWithoutComments: true,
+  //   HideRatingText: false,
+  //   ShowReviewersPhoto: true,
+  //   ShowReviewersName: false,
+  //   ShowViewAllReviewsLink: false,
+  //   ShowWriteReviewButton: false,
+  //   AutoPlay: false,
+  //   EnableLink: false,
+  //   minratings: "1",
+  //   dateformat: "my",
+  //   align: "left",
+  //   theme: "dark",
+  // }
   const {data} = props
-  const stars = Array.from({ length: data.star }, (_, index) => (
+  const stars = Array.from({ length: data?.star }, (_, index) => (
     <i
       key={index}
       className="fa fa-star my-2 "
@@ -36,26 +39,26 @@ const CustomCard = (props) => {
   let cardbody 
   let text
 
-  if (settings.theme === 'dark') {
+  if (settings?.theme === 'dark') {
     cardbody = {backgroundColor:'#303030'};
     text = {color : '#fff'};
   }
-  else if(settings.theme==='light') {
+  else if(settings?.theme==='light') {
     cardbody = {backgroundColor:'#efefef'};
     text = {color : '#000'};
   }
-  else if(settings.theme==='transparent'){
+  else if(settings?.theme==='transparent'){
   
     cardbody={background:'#efefef'}
     text={color:'#000'}
  }
- else if(settings.theme==='custom'){
-    cardbody={backgroundColor:settings.cardbody}
-    text={color:settings.text}
+ else if(settings?.theme==='custom'){
+    cardbody={backgroundColor:settings?.cardbody}
+    text={color:settings?.text}
  }
 
   
-  let align = settings.align === 'center'?'text-center':settings.align==='right'?'text-end':'text-start'
+  let align = settings?.align === 'center'?'text-center':settings?.align==='right'?'text-end':'text-start'
 
   return (
     <>
@@ -63,14 +66,14 @@ const CustomCard = (props) => {
         <div className="p-3 mb-5 mt-2" style={{...cardbody,height:'250px'}} >
         <HorizontalStack align="space-between">
           <HorizontalStack>
-          {settings.ShowReviewersPhoto?
+          {settings?.ShowReviewersPhoto?
             <div >
               <Avatar size="medium" name={data.name} source={data.imageLink} />
             </div>
             : ""
           }
             <div className="mb-lg-2 mb-1 ms-1" style={text} >
-            {settings.ShowReviewersName?
+            {settings?.ShowReviewersName?
               <Text as="p" variant="headingSm">
                 {data.name}
               </Text>
@@ -94,10 +97,10 @@ const CustomCard = (props) => {
             {stars}
           </Text>
         </div>
-        {settings.HideRatingText?
+        {settings?.HideRatingText?
         ""
         : 
-        settings.HideReviewsWithoutComments?
+        settings?.HideReviewsWithoutComments?
         <div className={align}>
 
           <p style={{...text}}>
