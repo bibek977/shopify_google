@@ -1,15 +1,15 @@
 import { Button, Page } from '@shopify/polaris'
 import React, { useContext } from 'react'
 import CardContainer from './CardContainer'
-import {PreviewCardContext} from '../components/PreviewCard'
 import { ButtonSelectContext } from '../components/ButtonSelect'
 
 const Review1Container = () => {
-  const {previewId,setPreviewId} = useContext(PreviewCardContext)
-  const {defaultSettings,setDefaultSettings} = useContext(ButtonSelectContext)
+  const {defaultSettings,setDefaultSettings,settings,setSettings} = useContext(ButtonSelectContext)
   const clickedButton = ()=>{
-    setPreviewId(1)
-    
+    setSettings((prev)=>({
+      ...prev,
+      previewId:1
+    }))    
   }
 
   return (
@@ -18,7 +18,7 @@ const Review1Container = () => {
         fullWidth
         title='1. Review with Badge-I'
         primaryAction={
-            <Button onClick={clickedButton} disabled={previewId===1?true:false} primarySuccess={previewId===1?false:true}>{previewId===1?"Active":"Select"}</Button>
+            <Button onClick={clickedButton} disabled={settings?.previewId===1?true:false} primarySuccess={settings?.previewId===1?false:true}>{settings?.previewId===1?"Active":"Select"}</Button>
         }
         >
             <CardContainer settings={defaultSettings} setSettings={setDefaultSettings}></CardContainer>

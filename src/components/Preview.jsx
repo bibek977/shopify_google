@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import { PreviewCardContext } from './PreviewCard'
 import CardContainer from '../containers/CardContainer'
 import Card2Container from '../containers/Card2Container'
 import Card3Container from '../containers/Card3Container'
@@ -12,7 +11,6 @@ import { ButtonSelectContext } from './ButtonSelect'
 
 const Preview = () => {
   const {settings,setSettings} = useContext(ButtonSelectContext)
-    const {previewId} = useContext(PreviewCardContext)
   return (
     <>
     <div style={{backgroundColor:'white'}} className='p-3'>
@@ -20,12 +18,12 @@ const Preview = () => {
         <WriteReview></WriteReview>
 
         {
-            previewId === 1 ? (<CardContainer settings={settings} setSettings={setSettings}></CardContainer>) 
-            : previewId === 2 ? (<Card2Container settings={settings} setSettings={setSettings} ></Card2Container>)
-            : previewId === 3 ? (<Card3Container settings={settings} setSettings={setSettings}></Card3Container>)
-            : previewId === 4 ? (<Card4Container settings={settings} setSettings={setSettings}></Card4Container>)
-            : previewId === 5 ? (<Card5Container settings={settings} setSettings={setSettings}></Card5Container>)
-            : previewId === 6 ? (<Card6Container settings={settings} setSettings={setSettings}></Card6Container>)
+            settings?.previewId === 1 ? (<CardContainer settings={settings} setSettings={setSettings}></CardContainer>) 
+            : settings?.previewId === 2 ? (<Card2Container settings={settings} setSettings={setSettings} ></Card2Container>)
+            : settings?.previewId === 3 ? (<Card3Container settings={settings} setSettings={setSettings}></Card3Container>)
+            : settings?.previewId === 4 ? (<Card4Container settings={settings} setSettings={setSettings}></Card4Container>)
+            : settings?.previewId === 5 ? (<Card5Container settings={settings} setSettings={setSettings}></Card5Container>)
+            : settings?.previewId === 6 ? (<Card6Container settings={settings} setSettings={setSettings}></Card6Container>)
             :(<h1>Not Found</h1>)
         }
 

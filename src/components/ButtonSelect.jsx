@@ -5,10 +5,11 @@ export const ButtonSelectContext = createContext()
 export const ButtonSelectProvider = ({children}) => {
 
   const initialCheckboxes = {
+    previewId:3,
     HideReviewsWithoutComments: true,
     HideRatingText: false,
     ShowReviewersPhoto: true,
-    ShowReviewersName: false,
+    ShowReviewersName: true,
     ShowViewAllReviewsLink: false,
     ShowWriteReviewButton: false,
     AutoPlay: false,
@@ -22,10 +23,11 @@ export const ButtonSelectProvider = ({children}) => {
   const [settings,setSettings] = useState(initialCheckboxes)
 
   const defaultCheckboxes = {
+    previewId:1,
     HideReviewsWithoutComments: true,
     HideRatingText: false,
     ShowReviewersPhoto: true,
-    ShowReviewersName: false,
+    ShowReviewersName: true,
     ShowViewAllReviewsLink: false,
     ShowWriteReviewButton: false,
     AutoPlay: false,
