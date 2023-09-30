@@ -2,7 +2,7 @@ import React from 'react'
 import CustomCard from '../components/CustomCard'
 
 const Swiper4Container = (props) => {
-    const {data} = props
+    const {data,settings,setSettings} = props
   return (
     <>
     <div className="custom-scrollbar p-5">
@@ -15,7 +15,7 @@ const Swiper4Container = (props) => {
           data?.map((e,i)=>{
             return(
             <div className='col-xl-4 col-lg-6 col-sm-12'>
-                <CustomCard data={e} key={i}></CustomCard>
+                <CustomCard data={e} key={i} settings={settings} setSettings={setSettings}></CustomCard>
             </div>
             )
           })

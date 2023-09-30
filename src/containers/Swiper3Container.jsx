@@ -11,7 +11,7 @@ import '../components/SliderContainer.css'
 import CustomCard from '../components/CustomCard'
 
 const Swiper3Container = (props) => {
-  const {data} = props
+  const {data,settings,setSettings} = props
 
   return (
     <div className='swiper-custom mx-5'>
@@ -42,7 +42,7 @@ const Swiper3Container = (props) => {
           data?.map((e,i)=>{
             return(
               <SwiperSlide>
-                <CustomCard data={e} key={i}></CustomCard>
+                <CustomCard data={e} key={i} settings={settings} setSettings={setSettings}></CustomCard>
             </SwiperSlide>
             )
           })

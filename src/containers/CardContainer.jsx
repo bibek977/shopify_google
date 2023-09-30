@@ -3,7 +3,8 @@ import SwiperContainer from './SwiperContainer'
 import OffieceData from '../components/OffieceData'
 import { ApiDataContext } from '../components/ContextData'
 
-const CardContainer = () => {
+const CardContainer = (props) => {
+  const {settings,setSettings} = props
     const {apiData,officeData}=useContext(ApiDataContext)
   return (
     <>
@@ -17,7 +18,7 @@ const CardContainer = () => {
           </div>
           <div className='col-lg-9 col-12'>
 
-        <SwiperContainer data={apiData}></SwiperContainer>
+        <SwiperContainer data={apiData} settings={settings} setSettings={setSettings}></SwiperContainer>
           </div>
         </div>
     </div>

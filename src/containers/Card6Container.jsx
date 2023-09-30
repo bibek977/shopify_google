@@ -7,7 +7,8 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import { ApiDataContext } from '../components/ContextData'
 
 
-function Card6Container() {
+function Card6Container(props) {
+  const {settings,setSettings} = props
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -29,7 +30,7 @@ function Card6Container() {
           <Offcanvas.Title></Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <Swiper5Container data={apiData}></Swiper5Container>
+          <Swiper5Container data={apiData} settings={settings} setSettings={setSettings}></Swiper5Container>
         </Offcanvas.Body>
       </Offcanvas>
       </Card>

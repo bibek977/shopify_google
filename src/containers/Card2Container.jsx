@@ -4,7 +4,8 @@ import CoverCard2 from '../components/CoverCard2'
 import { Card } from '@shopify/polaris'
 import { ApiDataContext } from '../components/ContextData'
 
-const Card2Container = () => {
+const Card2Container = (props) => {
+  const {settings,setSettings} = props
   const {apiData,officeData} = useContext(ApiDataContext)
   return (
     <>
@@ -19,7 +20,7 @@ const Card2Container = () => {
           </div>
           <div className='col-lg-9 col-12'>
 
-        <Swiper2Container data={apiData}></Swiper2Container>
+        <Swiper2Container data={apiData} settings={settings} setSettings={setSettings} ></Swiper2Container>
           </div>
         </div>
     </Card>

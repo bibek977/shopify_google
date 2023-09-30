@@ -1,26 +1,9 @@
 import { Avatar, Box, HorizontalStack, Text } from '@shopify/polaris'
-import React, { useContext } from 'react'
 import { google_logo } from './LogoGoogle'
-import { ButtonSelectContext } from './ButtonSelect'
 
 const CustomCard = (props) => {
 
-  const {settings} = useContext(ButtonSelectContext)
-  // const settings = {
-  //   HideReviewsWithoutComments: true,
-  //   HideRatingText: false,
-  //   ShowReviewersPhoto: true,
-  //   ShowReviewersName: false,
-  //   ShowViewAllReviewsLink: false,
-  //   ShowWriteReviewButton: false,
-  //   AutoPlay: false,
-  //   EnableLink: false,
-  //   minratings: "1",
-  //   dateformat: "my",
-  //   align: "left",
-  //   theme: "dark",
-  // }
-  const {data} = props
+  const {data,settings} = props
   const stars = Array.from({ length: data?.star }, (_, index) => (
     <i
       key={index}
