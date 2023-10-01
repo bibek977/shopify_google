@@ -1,8 +1,12 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
 
-const WriteReview = () => {
+const WriteReview = (props) => {
+  const {settings} = props
   return (
+    <>
+    { settings?.ShowWriteReviewButton ?
+
     <div className='d-flex justify-content-end'>
 
     <Button className='bg-primary m-2 '>
@@ -11,6 +15,11 @@ const WriteReview = () => {
         </a>
     </Button>
     </div>
+    : 
+    ""
+        }
+    </>
+
   )
 }
 

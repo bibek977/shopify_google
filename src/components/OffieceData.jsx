@@ -2,7 +2,7 @@ import React from 'react'
 import { Text, Thumbnail } from '@shopify/polaris'
 
 const OffieceData = (props) => {
-  const {data} = props 
+  const {data,settings,setSettings} = props 
   console.log(data)
   console.log(props)
   const stars = Array.from({ length: data[0]?.rate }, (_, index) => (
@@ -13,6 +13,25 @@ const OffieceData = (props) => {
       aria-hidden="true"
     ></i>
   ));
+  let cardbody
+  let text
+  if (settings?.theme === 'dark') {
+    cardbody = {backgroundColor:'#303030'};
+    text = {color : '#fff'};
+  }
+  else if(settings?.theme==='light') {
+    cardbody = {backgroundColor:'#efefef'};
+    text = {color : '#000'};
+  }
+  else if(settings?.theme==='transparent'){
+  
+    cardbody={background:'#efefef'}
+    text={color:'#000'}
+ }
+ else if(settings?.theme==='custom'){
+    cardbody={backgroundColor:settings?.cardbody}
+    text={color:settings?.text}
+ }
   return (
     <>
         <div className='d-flex align-item-center justify-content-center' style={{width:'17rem'}}>

@@ -13,7 +13,7 @@ const CardContainer = (props) => {
         <div className='row py-5'>
           <div className='d-flex justify-content-center align-items-center col-lg-3 col-12'>
 
-        <OffieceData data={officeData}></OffieceData>
+        <OffieceData data={officeData} settings={settings} setSettings={setSettings}></OffieceData>
 
           </div>
           <div className='col-lg-9 col-12'>

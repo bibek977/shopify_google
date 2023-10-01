@@ -11,11 +11,30 @@ import { ButtonSelectContext } from './ButtonSelect'
 
 const Preview = () => {
   const {settings,setSettings} = useContext(ButtonSelectContext)
+  let cardbody
+  let text
+  if (settings?.theme === 'dark') {
+    cardbody = {backgroundColor:'#303030'};
+    text = {color : '#fff'};
+  }
+  else if(settings?.theme==='light') {
+    cardbody = {backgroundColor:'#efefef'};
+    text = {color : '#000'};
+  }
+  else if(settings?.theme==='transparent'){
+  
+    cardbody={background:'#efefef'}
+    text={color:'#000'}
+ }
+ else if(settings?.theme==='custom'){
+    cardbody={backgroundColor:settings?.cardbody}
+    text={color:settings?.text}
+ }
   return (
     <>
-    <div style={{backgroundColor:'white'}} className='p-3'>
+    <div style={cardbody} className='p-3'>
 
-        <WriteReview></WriteReview>
+        <WriteReview settings={settings} setSettings={setSettings}></WriteReview>
 
         {
             settings?.previewId === 1 ? (<CardContainer settings={settings} setSettings={setSettings}></CardContainer>) 
@@ -27,7 +46,7 @@ const Preview = () => {
             :(<h1>Not Found</h1>)
         }
 
-        <ViewReviewAll></ViewReviewAll>
+        <ViewReviewAll settings={settings} setSettings={setSettings}></ViewReviewAll>
 
 </div>
 
