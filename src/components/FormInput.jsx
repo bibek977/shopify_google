@@ -1,70 +1,122 @@
 import { Select, Text } from '@shopify/polaris';
-import React, { useContext, useState } from 'react';
-import { ButtonSelectContext } from './ButtonSelect';
+import React, { useCallback } from 'react';
 
-const FormInput = () => {
-  // const {selectedOptions,setSelectedOptions} = useContext(ButtonSelectContext)
+const FormInput = (props) => {
 
-  const options = {
-    rating: [
-      { label: '1 star', value: '1' },
-      { label: '2 star', value: '2' },
-      { label: '3 star', value: '3' },
-      { label: '4 star', value: '4' },
-      { label: '5 star', value: '5' },
-    ],
-    date: [
-      { label: 'Month Year', value: '1' },
-      { label: 'Year Month Day', value: '2' },
-      { label: 'Month Day Year', value: '3' },
-      { label: 'Hide', value: '4' },
-    ],
-    align: [
-      { label: 'Center', value: '1' },
-      { label: 'Left', value: '2' },
-      { label: 'Right', value: '3' },
-    ],
-    theme: [
-      { label: 'Light', value: '1' },
-      { label: 'Dark', value: '2' },
-      { label: 'Transparent Background', value: '3' },
-      { label: 'Custom', value: '4' },
-    ],
-  };
+  const {settings,setSettings} = props
 
-  const [selectedOptions, setSelectedOptions] = useState({
-    rating: '1',
-    date: '1',
-    align: '1',
-    theme: '1',
-  });
+  const RatingsOptions = [
+    { label: "1 Star", value: 1 },
+    { label: "2 Star", value: 2 },
+    { label: "3 Star", value: 3 },
+    { label: "4 Star", value: 4 },
+    { label: "5 Star", value: 5 },
+  ];
 
-  const handleSelectChange = (key, value) => {
-    setSelectedOptions((prevOptions) => ({
-      ...prevOptions,
-      [key]: value,
-    }));
-  };
-  // console.log(selectedOptions)
+  const DateOptions = [
+    { label: "Month Year", value: "my" },
+    { label: "Year Month Day", value: "ymd" },
+    { label: "Month Day Year", value: "mdy" },
+    { label: "Hide", value: "hide" },
+  ];
+
+  const AlignOptions = [
+    { label: "Left", value: "left" },
+    { label: "Center", value: "center" },
+    { label: "Right", value: "right" },
+  ];
+
+  const ThemeOptions = [
+    { label: "Light", value: "light" },
+    { label: "Dark", value: "dark" },
+    { label: "Transparent", value: "transparent" },
+    { label: "Custom", value: "custom" }
+  ];
+
+  const handleRatingChange = useCallback(
+    (value)=> setSettings((prev)=>({
+      ...prev,
+      minratings : value
+    })),[])
+  const handleDateChange = useCallback(
+    (value)=> setSettings((prev)=>({
+      ...prev,
+      dateformat : value
+    })),[])
+  const handleAlignChange = useCallback(
+    (value)=> setSettings((prev)=>({
+      ...prev,
+      align : value
+    })),[])
+  const handleThemeChange = useCallback(
+    (value)=> setSettings((prev)=>({
+      ...prev,
+      theme : value
+    })),[])
 
   return (
+
     <div className="w-100">
-      {Object.keys(options).map((key) => (
-        <div className="d-flex justify-content-start mb-3" key={key}>
-          <label className="w-50">
-            <Text>{`Select ${key} format`}</Text>
-          </label>
-          <span className="w-50">
-            <Select
-              options={options[key]}
-              onChange={(value) => handleSelectChange(key, value)}
-              value={selectedOptions[key]}
-            />
-          </span>
-        </div>
-      ))}
+
+      <div className="d-flex justify-content-start mb-3">
+        <label className="w-50">
+          <Text>Minimum Rating</Text>
+        </label>
+        <span className="w-50">
+          <Select
+          name='minratings'
+          options={RatingsOptions}
+          value={settings?.minratings}
+          onChange={handleRatingChange}
+          >
+          </Select>
+        </span>
+      </div>
+      <div className="d-flex justify-content-start mb-3">
+        <label className="w-50">
+          <Text>Select Date format</Text>
+        </label>
+        <span className="w-50">
+          <Select
+          name='minratings'
+          options={DateOptions}
+          value={settings?.dateformat}
+          onChange={handleDateChange}
+          >
+          </Select>
+        </span>
+      </div>
+      <div className="d-flex justify-content-start mb-3">
+        <label className="w-50">
+          <Text>Align</Text>
+        </label>
+        <span className="w-50">
+          <Select
+          name='minratings'
+          options={AlignOptions}
+          value={settings?.align}
+          onChange={handleAlignChange}
+          >
+          </Select>
+        </span>
+      </div>
+      <div className="d-flex justify-content-start mb-3">
+        <label className="w-50">
+          <Text>Theme</Text>
+        </label>
+        <span className="w-50">
+          <Select
+          name='minratings'
+          options={ThemeOptions}
+          value={settings?.theme}
+          onChange={handleThemeChange}
+          >
+          </Select>
+        </span>
+      </div>
+
     </div>
-  );
-};
+  )
+}
 
 export default FormInput;

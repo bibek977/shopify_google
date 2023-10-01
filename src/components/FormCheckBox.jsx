@@ -1,5 +1,4 @@
 import { Checkbox } from '@shopify/polaris';
-import React, { useCallback } from 'react';
 
 const FormCheckBox = (props) => {
 
