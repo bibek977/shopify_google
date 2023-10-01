@@ -2,8 +2,10 @@ import { Card, Page,Button,Divider, Form, FormLayout } from '@shopify/polaris'
 import React, { useContext } from 'react'
 import FormInput from '../components/FormInput'
 import FormCheckBox from '../components/FormCheckBox'
+import { ButtonSelectContext } from '../components/ButtonSelect'
 
 const FormContainer = () => {
+    const {settings,setSettings} = useContext(ButtonSelectContext)
 
   return (
     <>
@@ -25,12 +27,12 @@ const FormContainer = () => {
 
                         <div className='col-md-6 col-12'>
 
-                            <FormInput></FormInput>
+                            <FormInput settings={settings} setSettings={setSettings }></FormInput>
                         </div>
 
 
                         <div className='col-md-6 col-12'>
-                            <FormCheckBox></FormCheckBox>
+                            <FormCheckBox settings = {settings} setSettings={setSettings}></FormCheckBox>
                         </div>
                 </div>
 

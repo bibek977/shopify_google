@@ -1,45 +1,85 @@
 import { Checkbox } from '@shopify/polaris';
-import React, { useCallback, useContext, useState } from 'react';
-import { ButtonSelectContext } from './ButtonSelect';
+import React, { useCallback } from 'react';
 
-const FormCheckBox = () => {
+const FormCheckBox = (props) => {
 
-  // const {buttonStatus,setButtonStatus,initialCheckboxes} = useContext(ButtonSelectContext)
+  const {settings,setSettings} = props
 
-  const initialCheckboxes = {
-    HideReviewsWithoutComments: false,
-    HideRatingText: false,
-    ShowReviewersPhoto: false,
-    ShowReviewersName: false,
-    ShowViewAllReviewsLink: false,
-    ShowWriteReviewButton: false,
-    AutoPlay: false,
-  };
-
-  const [checkboxes, setCheckboxes] = useState(initialCheckboxes);
-
-  const handleChange = useCallback(
-    (name) => {
-      setCheckboxes((prevCheckboxes) => ({
-        ...prevCheckboxes,
-        [name]: !prevCheckboxes[name], // Toggle the checkbox state
-      }));
-    },
-    []
-    );
-    // console.log(buttonStatus)
+  const handleChange = (name)=>{
+    setSettings((prev)=>({
+      ...prev,
+      [name] : !prev[name]
+    }))
+  }
 
   return (
+
+
     <div className="w-100">
-      {Object.keys(initialCheckboxes).map((checkboxName) => (
-        <div className="w-100 mx-5 mb-2" key={checkboxName}>
-          <Checkbox
-            label={` ${checkboxName.replace(/([A-Z])/g, ' $1')}`}
-            checked={setCheckboxes[checkboxName]}
-            onChange={() => handleChange(checkboxName)}
-          />
-        </div>
-      ))}
+      <div className="w-100 mx-5 mb-2">
+        <Checkbox
+        label="Hide Reviews without Comments"
+        checked={settings?.HideReviewsWithoutComments}
+        onChange={()=>handleChange('HideReviewsWithoutComments')}
+        >
+        </Checkbox>
+      </div>
+      <div className="w-100 mx-5 mb-2">
+        <Checkbox
+        label="Hide Rating Text"
+        checked={settings?.HideRatingText}
+        onChange={()=>handleChange('HideRatingText')}
+        >
+        </Checkbox>
+      </div>
+      <div className="w-100 mx-5 mb-2">
+        <Checkbox
+        label="Show Reviewers Photo"
+        checked={settings?.ShowReviewersPhoto}
+        onChange={()=>handleChange('ShowReviewersPhoto')}
+        >
+        </Checkbox>
+      </div>
+      <div className="w-100 mx-5 mb-2">
+        <Checkbox
+        label="Show Reviewers Name"
+        checked={settings?.ShowReviewersName}
+        onChange={()=>handleChange('ShowReviewersName')}
+        >
+        </Checkbox>
+      </div>
+      <div className="w-100 mx-5 mb-2">
+        <Checkbox
+        label="Show View All Reviews Link"
+        checked={settings?.ShowViewAllReviewsLink}
+        onChange={()=>handleChange('ShowViewAllReviewsLink')}
+        >
+        </Checkbox>
+      </div>
+      <div className="w-100 mx-5 mb-2">
+        <Checkbox
+        label="Show Write a Review Button"
+        checked={settings?.ShowWriteReviewButton}
+        onChange={()=>handleChange('ShowWriteReviewButton')}
+        >
+        </Checkbox>
+      </div>
+      <div className="w-100 mx-5 mb-2">
+        <Checkbox
+        label="Auto Play"
+        checked={settings?.AutoPlay}
+        onChange={()=>handleChange('AutoPlay')}
+        >
+        </Checkbox>
+      </div>
+      <div className="w-100 mx-5 mb-2">
+        <Checkbox
+        label="Enable Hyper Link"
+        checked={settings?.EnableHyperLink}
+        onChange={()=>handleChange('EnableHyperLink')}
+        >
+        </Checkbox>
+      </div>
     </div>
     
   );
