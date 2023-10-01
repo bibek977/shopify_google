@@ -6,10 +6,30 @@ import { ApiDataContext } from '../components/ContextData'
 const CardContainer = (props) => {
   const {settings,setSettings} = props
     const {apiData,officeData}=useContext(ApiDataContext)
+    let cardbody
+  let text
+  if (settings?.theme === 'dark') {
+    cardbody = {backgroundColor:'#000'};
+    text = {color : '#fff'};
+  }
+  else if(settings?.theme==='light') {
+    cardbody = {backgroundColor:'white'};
+    text = {color : '#000'};
+  }
+  else if(settings?.theme==='transparent'){
+  
+    cardbody={background:'white'}
+    text={color:'#000'}
+ }
+ else if(settings?.theme==='custom'){
+    cardbody={backgroundColor:settings?.cardbody}
+    text={color:settings?.text}
+ }
+ 
   return (
     <>
 
-    <div style={{backgroundColor:'white'}}>
+    <div style={cardbody}>
         <div className='row py-5'>
           <div className='d-flex justify-content-center align-items-center col-lg-3 col-12'>
 

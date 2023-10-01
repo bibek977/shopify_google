@@ -2,7 +2,25 @@ import { HorizontalStack, VerticalStack,Text } from '@shopify/polaris'
 import React from 'react'
 
 const CoverCard3 = (props) => {
-  const {data} = props 
+  const {data,settings} = props 
+  let cardbody 
+  let text
+
+  if (settings?.theme === 'dark') {
+    cardbody = {backgroundColor:'#303030'};
+    text = {color : '#fff'};
+  }
+  else if(settings?.theme==='light') {
+    cardbody = {backgroundColor:'#efefef'};
+    text = {color : '#000'};
+  }
+  else if(settings?.theme==='transparent'){
+
+ }
+ else if(settings?.theme==='custom'){
+    cardbody={backgroundColor:settings?.cardbody}
+    text={color:settings?.text}
+ }
 
   const stars = Array.from({ length: data[0]?.rate }, (_, index) => (
     <i

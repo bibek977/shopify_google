@@ -4,6 +4,7 @@ import { google_logo } from './LogoGoogle'
 const CustomCard = (props) => {
 
   const {data,settings} = props
+
   const stars = Array.from({ length: data?.star }, (_, index) => (
     <i
       key={index}
@@ -23,7 +24,7 @@ const CustomCard = (props) => {
   let text
 
   if (settings?.theme === 'dark') {
-    cardbody = {backgroundColor:'#303030'};
+    cardbody = {backgroundColor:'rgb(48, 48, 48)'};
     text = {color : '#fff'};
   }
   else if(settings?.theme==='light') {
@@ -32,7 +33,7 @@ const CustomCard = (props) => {
   }
   else if(settings?.theme==='transparent'){
   
-    cardbody={background:'#efefef'}
+    cardbody={background:''}
     text={color:'#000'}
  }
  else if(settings?.theme==='custom'){
@@ -65,7 +66,11 @@ const CustomCard = (props) => {
             }
              <div >
              <Text variant="bodySm" as="p">
-                {data.date}
+              {settings?.dateformat==='my'?
+                data.date
+                :
+                ""
+              }
               </Text>
              </div>
             </div>

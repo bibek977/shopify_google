@@ -16,16 +16,16 @@ const OffieceData = (props) => {
   let cardbody
   let text
   if (settings?.theme === 'dark') {
-    cardbody = {backgroundColor:'#303030'};
+    cardbody = {backgroundColor:'black'};
     text = {color : '#fff'};
   }
   else if(settings?.theme==='light') {
-    cardbody = {backgroundColor:'#efefef'};
+    cardbody = {backgroundColor:'white'};
     text = {color : '#000'};
   }
   else if(settings?.theme==='transparent'){
   
-    cardbody={background:'#efefef'}
+    cardbody={background:'white'}
     text={color:'#000'}
  }
  else if(settings?.theme==='custom'){
@@ -34,7 +34,7 @@ const OffieceData = (props) => {
  }
   return (
     <>
-        <div className='d-flex align-item-center justify-content-center' style={{width:'17rem'}}>
+        <div className='d-flex align-item-center justify-content-center' style={{...cardbody,width:'17rem'}}>
                 <div className='d-flex flex-lg-column flex-md-row flex-xl-row'>
                 <div className=''>
 
@@ -44,10 +44,19 @@ const OffieceData = (props) => {
                 ></Thumbnail>
                 </div>
                 <div className='d-flex flex-column'>
-                    <Text><b>{data[0]?.title}</b></Text>
+                    <Text><b style={text}>{data[0]?.title}</b></Text>
                     <Text><small>{stars}</small></Text>
                     <Text>
-                  <p>{data[0]?.person} Google reviews</p>
+
+                    {settings?.EnableHyperLink?
+                    <p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Google&query_place_id=ChIJQdZRWZoa6zkRTiJKYkgF5wg" className='text-decoration-none' style={text}>{data[0]?.person} Google reviews</a>  
+                    </p>
+                    :
+                    <p style={text}>
+                      {data[0]?.person} Google reviews
+                    </p> 
+                  }
                 </Text>
                 </div>
 

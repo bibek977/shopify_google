@@ -14,16 +14,16 @@ const Preview = () => {
   let cardbody
   let text
   if (settings?.theme === 'dark') {
-    cardbody = {backgroundColor:'#303030'};
+    cardbody = {backgroundColor:'#000'};
     text = {color : '#fff'};
   }
   else if(settings?.theme==='light') {
-    cardbody = {backgroundColor:'#efefef'};
+    cardbody = {backgroundColor:'white'};
     text = {color : '#000'};
   }
   else if(settings?.theme==='transparent'){
   
-    cardbody={background:'#efefef'}
+    cardbody={background:''}
     text={color:'#000'}
  }
  else if(settings?.theme==='custom'){
