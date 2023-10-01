@@ -5,23 +5,42 @@ import { Card } from '@shopify/polaris'
 import { ApiDataContext } from '../components/ContextData'
 
 const Card3Container = (props) => {
-  const {settings,setSettings} = props
-  const {apiData,officeData} = useContext(ApiDataContext)
+  const {settings,setSettings,apiData} = props
+  const {officeData} = useContext(ApiDataContext)
+  let cardbody
+  let text
+  if (settings?.theme === 'dark') {
+    cardbody = {backgroundColor:'#000'};
+    text = {color : '#fff'};
+  }
+  else if(settings?.theme==='light') {
+    cardbody = {backgroundColor:'white'};
+    text = {color : '#000'};
+  }
+  else if(settings?.theme==='transparent'){
+  
+    cardbody={background:''}
+    text={color:'#000'}
+ }
+ else if(settings?.theme==='custom'){
+    cardbody={backgroundColor:settings?.cardbody}
+    text={color:settings?.text}
+ }
   return (
     <>
 
-    <Card>
+    <div style={cardbody}>
         <div className='row'>
           <div className='d-flex justify-content-center align-items-center col-12'>
 
-        <CoverCard2 data={officeData}></CoverCard2>
+        <CoverCard2 data={officeData} settings={settings} setSettings={setSettings}></CoverCard2>
           </div>
           <div className='col-12'>
 
         <Swiper3Container data={apiData} settings={settings} setSettings={setSettings}></Swiper3Container>
           </div>
         </div>
-    </Card>
+    </div>
     </>
   )
 }

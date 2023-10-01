@@ -32,6 +32,7 @@ const Preview = () => {
     cardbody={backgroundColor:settings?.cardbody}
     text={color:settings?.text}
  }
+
    let newData = apiData;
 
    if (settings?.minratings === '4') {
@@ -49,20 +50,27 @@ const Preview = () => {
    else if (settings?.minratings === '1') {
      newData = apiData?.filter((item) => item.star <= 1);
    }
+
+   let finalData = newData;
+
+   if (settings?.HideReviewsWithoutComments===true) {
+
+     finalData = newData?.filter((item)=>item.description!=="")
+    }
  
   return (
     <>
-    <div style={cardbody} className='p-3'>
+    <div  className='p-3'>
 
         <WriteReview settings={settings} setSettings={setSettings}></WriteReview>
 
         {
-            settings?.previewId === 1 ? (<CardContainer apiData={newData} settings={settings} setSettings={setSettings}></CardContainer>) 
-            : settings?.previewId === 2 ? (<Card2Container data={newData} settings={settings} setSettings={setSettings} ></Card2Container>)
-            : settings?.previewId === 3 ? (<Card3Container data={newData} settings={settings} setSettings={setSettings}></Card3Container>)
-            : settings?.previewId === 4 ? (<Card4Container data={newData} settings={settings} setSettings={setSettings}></Card4Container>)
-            : settings?.previewId === 5 ? (<Card5Container data={newData} settings={settings} setSettings={setSettings}></Card5Container>)
-            : settings?.previewId === 6 ? (<Card6Container data={newData} settings={settings} setSettings={setSettings}></Card6Container>)
+            settings?.previewId === 1 ? (<CardContainer apiData={finalData} settings={settings} setSettings={setSettings}></CardContainer>) 
+            : settings?.previewId === 2 ? (<Card2Container apiData={finalData} settings={settings} setSettings={setSettings} ></Card2Container>)
+            : settings?.previewId === 3 ? (<Card3Container apiData={finalData} settings={settings} setSettings={setSettings}></Card3Container>)
+            : settings?.previewId === 4 ? (<Card4Container apiData={finalData} settings={settings} setSettings={setSettings}></Card4Container>)
+            : settings?.previewId === 5 ? (<Card5Container apiData={finalData} settings={settings} setSettings={setSettings}></Card5Container>)
+            : settings?.previewId === 6 ? (<Card6Container apiData={finalData} settings={settings} setSettings={setSettings}></Card6Container>)
             :(<h1>Not Found</h1>)
         }
 

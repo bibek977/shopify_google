@@ -18,7 +18,7 @@ const CardContainer = (props) => {
   }
   else if(settings?.theme==='transparent'){
   
-    cardbody={background:'white'}
+    cardbody={background:''}
     text={color:'#000'}
  }
  else if(settings?.theme==='custom'){
@@ -30,7 +30,7 @@ const CardContainer = (props) => {
     <>
 
     <div style={cardbody}>
-        <div className='row py-5'>
+        <div className='row py-5 '>
           <div className='d-flex justify-content-center align-items-center col-lg-3 col-12'>
 
         <OffieceData data={officeData} settings={settings} setSettings={setSettings}></OffieceData>

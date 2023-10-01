@@ -88,15 +88,15 @@ const CustomCard = (props) => {
         {settings?.HideRatingText?
         ""
         : 
-        settings?.HideReviewsWithoutComments?
+        // settings?.HideReviewsWithoutComments?
         <div className={align}>
 
           <p style={{...text}}>
             {truc(data.description,70)}
           </p>
          </div>
-            : 
-            ""
+            // : 
+            // ""
         }
 
         </div>

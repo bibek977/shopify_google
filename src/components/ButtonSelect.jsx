@@ -5,7 +5,7 @@ export const ButtonSelectContext = createContext()
 export const ButtonSelectProvider = ({children}) => {
 
   const initialCheckboxes = {
-    previewId:3,
+    previewId:5,
     HideReviewsWithoutComments: true,
     HideRatingText: false,
     ShowReviewersPhoto: true,
@@ -14,7 +14,7 @@ export const ButtonSelectProvider = ({children}) => {
     ShowWriteReviewButton: false,
     AutoPlay: false,
     EnableHyperLink: false,
-    minratings: '2',
+    minratings: '5',
     dateformat: "my",
     align: "left",
     theme: "dark",

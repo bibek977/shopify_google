@@ -9,6 +9,24 @@ import CustomCard from '../components/CustomCard';
 
 const SwiperContainer = (props) => {
   const { data, settings, setSettings } = props;
+  let cardbody 
+  let text
+
+  if (settings?.theme === 'dark') {
+    cardbody = {backgroundColor:'#303030'};
+    text = {color : '#fff'};
+  }
+  else if(settings?.theme==='light') {
+    cardbody = {backgroundColor:'#efefef'};
+    text = {color : '#000'};
+  }
+  else if(settings?.theme==='transparent'){
+
+ }
+ else if(settings?.theme==='custom'){
+    cardbody={backgroundColor:settings?.cardbody}
+    text={color:settings?.text}
+ }
   
   return (
     <div className='swiper-custom mx-5'>
@@ -43,10 +61,10 @@ const SwiperContainer = (props) => {
           );
         })}
       </Swiper>
-      <div className='swiper-button-next swiper-next-1'></div>
-      <div className='swiper-button-prev swiper-prev-1'></div>
-      <div className="swiper-pagination swiper-pagination-1">
-        <span className="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+      <div className='swiper-button-next swiper-next-1' style={text}></div>
+      <div className='swiper-button-prev swiper-prev-1' style={text}></div>
+      <div className="swiper-pagination swiper-pagination-1" >
+        <span className="swiper-pagination-bullet swiper-pagination-bullet-active" ></span>
         <span className="swiper-pagination-bullet"></span>
         <span className="swiper-pagination-bullet"></span>
         <span className="swiper-pagination-bullet"></span>

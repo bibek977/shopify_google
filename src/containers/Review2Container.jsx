@@ -2,9 +2,12 @@ import { Button, Page } from '@shopify/polaris'
 import React, { useContext } from 'react'
 import Card2Container from './Card2Container'
 import { ButtonSelectContext } from '../components/ButtonSelect'
+import { ApiDataContext } from '../components/ContextData'
 
 const Review2Container = () => {
   const {defaultSettings,setDefaultSettings,settings,setSettings} = useContext(ButtonSelectContext)
+  const {apiData}=useContext(ApiDataContext)
+
   const clickedButton = ()=>{
     setSettings((prev)=>({
       ...prev,
@@ -20,7 +23,7 @@ const Review2Container = () => {
           <Button onClick={clickedButton} disabled={settings?.previewId===2?true:false} primarySuccess={settings?.previewId===2?false:true}>{settings?.previewId===2?"Active":"Select"}</Button>
         }
         >
-            <Card2Container settings={defaultSettings} setSettings={setDefaultSettings}></Card2Container>
+            <Card2Container apiData={apiData} settings={defaultSettings} setSettings={setDefaultSettings}></Card2Container>
 
         </Page>
     </>

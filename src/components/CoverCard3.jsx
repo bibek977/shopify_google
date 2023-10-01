@@ -7,12 +7,12 @@ const CoverCard3 = (props) => {
   let text
 
   if (settings?.theme === 'dark') {
-    cardbody = {backgroundColor:'#303030'};
-    text = {color : '#fff'};
+    cardbody = {backgroundColor:'rgb(48, 48, 48)'};
+    text = {color : 'white'};
   }
   else if(settings?.theme==='light') {
     cardbody = {backgroundColor:'#efefef'};
-    text = {color : '#000'};
+    text = {color : 'black'};
   }
   else if(settings?.theme==='transparent'){
 
@@ -35,18 +35,26 @@ const CoverCard3 = (props) => {
         <VerticalStack align='center'>
           <div className="img p-1">
             <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" width="80px" alt="" />
-            <span className='p-2 fs-4'>Rating</span>
+            <span className='p-2 fs-4' style={text}>Rating</span>
           </div>
           <HorizontalStack>
           <Text>
-            <h4 className='text-center p-1'>{data[0]?.rate}</h4>
+            <h4 className='text-center p-1' style={text}>{data[0]?.rate}</h4>
           </Text>
           <div className='text-center '>
             {stars}
           </div>
 
           <Text>
-            <p className='text-center p-1'>{data[0]?.person} reviews</p>
+          {settings?.EnableHyperLink?
+                    <p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Google&query_place_id=ChIJQdZRWZoa6zkRTiJKYkgF5wg" className='text-decoration-none' style={text}>{data[0]?.person} Google reviews</a>  
+                    </p>
+                    :
+                    <p style={text}>
+                      {data[0]?.person} Google reviews
+                    </p> 
+                  }
           </Text>
           </HorizontalStack>
 

@@ -1,36 +1,68 @@
-import { HorizontalStack, Thumbnail, VerticalStack,Text } from '@shopify/polaris'
 import React from 'react'
+import { Text, Thumbnail } from '@shopify/polaris'
 
-const CoverCard = () => {
+const CoverCard = (props) => {
+  const {data,settings,setSettings} = props 
+  console.log(data)
+  console.log(props)
+  const stars = Array.from({ length: data[0]?.rate }, (_, index) => (
+    <i
+      key={index}
+      className="fa fa-star my-2 "
+      style={{ color: "gold", fontSize: "14px", marginRight: "3px" }}
+      aria-hidden="true"
+    ></i>
+  ));
+  let cardbody
+  let text
+  if (settings?.theme === 'dark') {
+    cardbody = {backgroundColor:'rgb(48, 48, 48)'};
+    text = {color : '#fff'};
+  }
+  else if(settings?.theme==='light') {
+    cardbody = {backgroundColor:'rgb(239, 239, 239)'};
+    text = {color : '#000'};
+  }
+  else if(settings?.theme==='transparent'){
+  
+    cardbody={background:'white'}
+    text={color:'#000'}
+ }
+ else if(settings?.theme==='custom'){
+    cardbody={backgroundColor:settings?.cardbody}
+    text={color:settings?.text}
+ }
   return (
-    
-        <HorizontalStack>
-          <div className="img px-2 pb-3 d-flex justify-content-center align-items-center">
+    <>
+        <div className='d-flex align-item-center justify-content-center' style={{width:'17rem'}}>
+                <div className='d-flex flex-lg-column flex-md-row flex-xl-row'>
+                <div className=''>
 
-        <Thumbnail 
-            source={"https://lh5.googleusercontent.com/p/AF1QipMfZMRCV3ipOD54PJKJ0lY8E1QQJB4jFnxj3vLR=w410-h240-k-no"}
-            size='large'
-            >
-        </Thumbnail> 
-          </div>
-        <VerticalStack>
-          <Text>
-            <h4>Nerd Platoon Pvt. Ltd.</h4>
-          </Text>
-          <HorizontalStack>
-          <i class="fa-solid fa-star" style={{color: 'rgb(247, 187, 4)'}}></i>
-          <i class="fa-solid fa-star" style={{color: 'rgb(247, 187, 4)'}}></i>
-          <i class="fa-solid fa-star" style={{color: 'rgb(247, 187, 4)'}}></i>
-          <i class="fa-solid fa-star" style={{color: 'rgb(247, 187, 4)'}}></i>
-          <i class="fa-solid fa-star" style={{color: 'rgb(247, 187, 4)'}}></i>
-          </HorizontalStack>
+                <Thumbnail 
+                source={data[0]?.photo}
+                size='large'
+                ></Thumbnail>
+                </div>
+                <div className='d-flex flex-column'>
+                    <Text><b style={text}>{data[0]?.title}</b></Text>
+                    <Text><small>{stars}</small></Text>
+                    <Text>
 
-          <Text>
-            <h5>18 Google reviews</h5>
-          </Text>
-          
-        </VerticalStack>    
-        </HorizontalStack>
+                    {settings?.EnableHyperLink?
+                    <p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Google&query_place_id=ChIJQdZRWZoa6zkRTiJKYkgF5wg" className='text-decoration-none' style={text}>{data[0]?.person} Google reviews</a>  
+                    </p>
+                    :
+                    <p style={text}>
+                      {data[0]?.person} Google reviews
+                    </p> 
+                  }
+                </Text>
+                </div>
+
+                </div>
+        </div>
+    </>
   )
 }
 

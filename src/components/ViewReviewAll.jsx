@@ -27,7 +27,7 @@ const ViewReviewAll = (props) => {
   return (
   <>
     {settings?.ShowViewAllReviewsLink?
-    <div className='d-flex justify-content-end m-2'>
+    <div className='d-flex justify-content-end p-2' style={cardbody}>
     <Avatar size='small' source={google_logo}></Avatar>
     <a style={{...text,textDecoration:'none',paddingLeft:'.5rem'}} href="https://www.google.com/maps/@27.9308066,6.7369589,3z?entry=ttu">
         View All Reviews
