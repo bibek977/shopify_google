@@ -6,11 +6,11 @@ const FormInput = (props) => {
   const {settings,setSettings} = props
 
   const RatingsOptions = [
-    { label: "1 Star", value: 1 },
-    { label: "2 Star", value: 2 },
-    { label: "3 Star", value: 3 },
-    { label: "4 Star", value: 4 },
-    { label: "5 Star", value: 5 },
+    { label: "1 Star", value: '1' },
+    { label: "2 Star", value: '2' },
+    { label: "3 Star", value: '3' },
+    { label: "4 Star", value: '4' },
+    { label: "5 Star", value: '5' },
   ];
 
   const DateOptions = [
@@ -78,7 +78,7 @@ const FormInput = (props) => {
         </label>
         <span className="w-50">
           <Select
-          name='minratings'
+          name='dateformat'
           options={DateOptions}
           value={settings?.dateformat}
           onChange={handleDateChange}
@@ -92,7 +92,7 @@ const FormInput = (props) => {
         </label>
         <span className="w-50">
           <Select
-          name='minratings'
+          name='align'
           options={AlignOptions}
           value={settings?.align}
           onChange={handleAlignChange}
@@ -106,7 +106,7 @@ const FormInput = (props) => {
         </label>
         <span className="w-50">
           <Select
-          name='minratings'
+          name='theme'
           options={ThemeOptions}
           value={settings?.theme}
           onChange={handleThemeChange}

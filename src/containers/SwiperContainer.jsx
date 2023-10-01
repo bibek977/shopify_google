@@ -10,26 +10,6 @@ import CustomCard from '../components/CustomCard';
 const SwiperContainer = (props) => {
   const { data, settings, setSettings } = props;
   
-  // Declare newData outside the if statement block
-  let newData = data;
-
-  if (settings?.minratings === 4) {
-    // Filter the data based on the minratings setting
-    newData = data?.filter((item) => item.star <= 4);
-  }
-  else if (settings?.minratings === 3) {
-    // Filter the data based on the minratings setting
-    newData = data?.filter((item) => item.star <= 3);
-  }
-  else if (settings?.minratings === 2) {
-    // Filter the data based on the minratings setting
-    newData = data?.filter((item) => item.star <= 2);
-  }
-  else if (settings?.minratings === 1) {
-    // Filter the data based on the minratings setting
-    newData = data?.filter((item) => item.star <= 1);
-  }
-
   return (
     <div className='swiper-custom mx-5'>
       <Swiper
@@ -55,7 +35,7 @@ const SwiperContainer = (props) => {
           },
         }}
       >
-        {newData?.map((e, i) => {
+        {data?.map((e, i) => {
           return (
             <SwiperSlide>
               <CustomCard data={e} key={i} settings={settings} setSettings={setSettings}></CustomCard>

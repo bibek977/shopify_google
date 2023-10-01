@@ -8,9 +8,11 @@ import Card6Container from '../containers/Card6Container'
 import WriteReview from './WriteReview'
 import ViewReviewAll from './ViewReviewAll'
 import { ButtonSelectContext } from './ButtonSelect'
+import { ApiDataContext } from './ContextData'
 
 const Preview = () => {
   const {settings,setSettings} = useContext(ButtonSelectContext)
+  const {apiData,officeData}=useContext(ApiDataContext)
   let cardbody
   let text
   if (settings?.theme === 'dark') {
@@ -30,6 +32,24 @@ const Preview = () => {
     cardbody={backgroundColor:settings?.cardbody}
     text={color:settings?.text}
  }
+   let newData = apiData;
+
+   if (settings?.minratings === '4') {
+     newData = apiData?.filter((item) => item.star <= 4)
+   }
+   else if (settings?.minratings === '3') {
+     newData = apiData?.filter((item) => item.star <= 3);
+   }
+   else if (settings?.minratings === '5') {
+     newData = apiData?.filter((item) => item.star <= 5);
+   }
+   else if (settings?.minratings === '2') {
+     newData = apiData?.filter((item) => item.star <= 2);
+   }
+   else if (settings?.minratings === '1') {
+     newData = apiData?.filter((item) => item.star <= 1);
+   }
+ 
   return (
     <>
     <div style={cardbody} className='p-3'>
@@ -37,12 +57,12 @@ const Preview = () => {
         <WriteReview settings={settings} setSettings={setSettings}></WriteReview>
 
         {
-            settings?.previewId === 1 ? (<CardContainer settings={settings} setSettings={setSettings}></CardContainer>) 
-            : settings?.previewId === 2 ? (<Card2Container settings={settings} setSettings={setSettings} ></Card2Container>)
-            : settings?.previewId === 3 ? (<Card3Container settings={settings} setSettings={setSettings}></Card3Container>)
-            : settings?.previewId === 4 ? (<Card4Container settings={settings} setSettings={setSettings}></Card4Container>)
-            : settings?.previewId === 5 ? (<Card5Container settings={settings} setSettings={setSettings}></Card5Container>)
-            : settings?.previewId === 6 ? (<Card6Container settings={settings} setSettings={setSettings}></Card6Container>)
+            settings?.previewId === 1 ? (<CardContainer apiData={newData} settings={settings} setSettings={setSettings}></CardContainer>) 
+            : settings?.previewId === 2 ? (<Card2Container data={newData} settings={settings} setSettings={setSettings} ></Card2Container>)
+            : settings?.previewId === 3 ? (<Card3Container data={newData} settings={settings} setSettings={setSettings}></Card3Container>)
+            : settings?.previewId === 4 ? (<Card4Container data={newData} settings={settings} setSettings={setSettings}></Card4Container>)
+            : settings?.previewId === 5 ? (<Card5Container data={newData} settings={settings} setSettings={setSettings}></Card5Container>)
+            : settings?.previewId === 6 ? (<Card6Container data={newData} settings={settings} setSettings={setSettings}></Card6Container>)
             :(<h1>Not Found</h1>)
         }
 

@@ -4,8 +4,8 @@ import OffieceData from '../components/OffieceData'
 import { ApiDataContext } from '../components/ContextData'
 
 const CardContainer = (props) => {
-  const {settings,setSettings} = props
-    const {apiData,officeData}=useContext(ApiDataContext)
+  const {settings,setSettings, apiData} = props
+    const {officeData}=useContext(ApiDataContext)
     let cardbody
   let text
   if (settings?.theme === 'dark') {
