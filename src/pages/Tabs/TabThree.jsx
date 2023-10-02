@@ -1,7 +1,8 @@
 import {  Layout, Page,Text  } from '@shopify/polaris'
-import React from 'react'
+import React, { useContext } from 'react'
 import FormContainer from '../../containers/FormContainer'
 import Preview from '../../components/Preview'
+import { ButtonSelectContext } from '../../components/ButtonSelect'
 
 const TabThree = () => {
   const preview = (text)=>{
@@ -11,6 +12,7 @@ const TabThree = () => {
       </Text>
     )
   }
+  const {settings,setSettings} = useContext(ButtonSelectContext)
   return (
     <>
        <Page
@@ -23,7 +25,7 @@ const TabThree = () => {
              title={preview('Preview')}
              fullWidth
              >
-              <Preview></Preview>
+              <Preview settings={settings} setSettings={setSettings}></Preview>
             </Page>
           </div>
         </Layout.Section>

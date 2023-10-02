@@ -26,16 +26,18 @@ const CoverCard3 = (props) => {
     <i
       key={index}
       className="fa fa-star my-2 "
-      style={{ color: "gold", fontSize: "14px", marginRight: "3px" }}
+      style={{ color: "gold", fontSize: "20px", marginRight: "3px" }}
       aria-hidden="true"
     ></i>
   ));
   return (
-    
+    <div style={cardbody} className='w-100'>
+
+
         <VerticalStack align='center'>
-          <div className="img p-1">
-            <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" width="80px" alt="" />
-            <span className='p-2 fs-4' style={text}>Rating</span>
+          <div className="img px-1 d-flex align-items-end">
+            <img className='align-self-start' src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" width="100px" alt="" />
+            <span className='px-2 fs-4 ' style={text}>Rating</span>
           </div>
           <HorizontalStack>
           <Text>
@@ -45,21 +47,25 @@ const CoverCard3 = (props) => {
             {stars}
           </div>
 
+          <div className='pt-2'>
+
           <Text>
           {settings?.EnableHyperLink?
-                    <p>
+                    <small>
                     <a href="https://www.google.com/maps/search/?api=1&query=Google&query_place_id=ChIJQdZRWZoa6zkRTiJKYkgF5wg" className='text-decoration-none' style={text}>{data[0]?.person} Google reviews</a>  
-                    </p>
+                    </small>
                     :
-                    <p style={text}>
+                    <small style={text}>
                       {data[0]?.person} Google reviews
-                    </p> 
+                    </small> 
                   }
           </Text>
+                  </div>
           </HorizontalStack>
 
           
-        </VerticalStack>    
+        </VerticalStack> 
+        </div>   
 
   )
 }

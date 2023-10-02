@@ -23,14 +23,14 @@ const Card2Container = (props) => {
     text={color:'#000'}
  }
  else if(settings?.theme==='custom'){
-    cardbody={backgroundColor:settings?.cardbody}
+    cardbody={backgroundColor:settings?.cardbg}
     text={color:settings?.text}
  }
   return (
     <>
 
     <div style={cardbody}>
-        <div className='row'>
+        <div className='row py-5'>
           <div className='d-flex justify-content-center align-items-center col-lg-3 col-12'>
 
         {/* <OffieceData data={officeData}></OffieceData> */}

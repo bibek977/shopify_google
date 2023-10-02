@@ -26,7 +26,7 @@ function Card5Container(props) {
   }
   else if(settings?.theme==='light') {
     cardbody = {backgroundColor:'rgb(239, 239, 239)'};
-    cardbody2={backgroundColor:'rgb(239, 239, 239)'}
+    cardbody2={backgroundColor:'white'}
     text = {color : 'black'};
   }
   else if(settings?.theme==='transparent'){
@@ -36,6 +36,7 @@ function Card5Container(props) {
  }
  else if(settings?.theme==='custom'){
     cardbody={backgroundColor:settings?.cardbody}
+    cardbody2={backgroundColor:settings?.cardbg}
     text={color:settings?.text}
  }
 
@@ -55,7 +56,7 @@ function Card5Container(props) {
         <Offcanvas.Header closeButton >
           <Offcanvas.Title ></Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body style={cardbody}>
+        <Offcanvas.Body style={cardbody2}>
           <Swiper5Container data={apiData} settings={settings} setSettings={setSettings}></Swiper5Container>
         </Offcanvas.Body>
       </Offcanvas>

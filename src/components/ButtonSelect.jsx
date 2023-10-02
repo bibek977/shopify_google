@@ -5,7 +5,7 @@ export const ButtonSelectContext = createContext()
 export const ButtonSelectProvider = ({children}) => {
 
   const initialCheckboxes = {
-    previewId:5,
+    previewId:1,
     HideReviewsWithoutComments: true,
     HideRatingText: false,
     ShowReviewersPhoto: true,
@@ -17,7 +17,10 @@ export const ButtonSelectProvider = ({children}) => {
     minratings: '5',
     dateformat: "my",
     align: "left",
-    theme: "dark",
+    theme: "custom",
+    cardbody:"blue",
+    text:'red',
+    cardbg:'green'
   };
   
   const [settings,setSettings] = useState(initialCheckboxes)

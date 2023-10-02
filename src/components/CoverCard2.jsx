@@ -8,7 +8,7 @@ const CoverCard2 = (props) => {
     <i
       key={index}
       className="fa fa-star my-2 "
-      style={{ color: "gold", fontSize: "14px", marginRight: "3px" }}
+      style={{ color: "gold", fontSize: "20px", marginRight: "3px" }}
       aria-hidden="true"
     ></i>
   ));
@@ -48,12 +48,16 @@ const CoverCard2 = (props) => {
                     </p>
                     :
                     <p style={text}>
-                      {data[0]?.person} Google reviews
+                      Based on 
+                      <b>
+
+                      {data[0]?.person} reviews
+                      </b>
                     </p> 
                   }
           </Text>
           <div className="img text-center">
-            <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" width="80px" alt="" />
+            <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" width="100px" alt="" />
           </div>
           
         </VerticalStack>    

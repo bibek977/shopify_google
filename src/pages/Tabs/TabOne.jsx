@@ -1,9 +1,10 @@
 import { Layout, Page,Text } from '@shopify/polaris'
-import React from 'react'
+import React, { useContext } from 'react'
 import { Connect } from '../../components/Connect'
 import { Update } from '../../components/Update'
 import Footer from '../../components/Footer'
 import Preview from '../../components/Preview'
+import { ButtonSelectContext } from '../../components/ButtonSelect'
 
 const TabOne = () => {
   const preview = (text)=>{
@@ -13,6 +14,7 @@ const TabOne = () => {
       </Text>
     )
   }
+  const {defaultSettings,setSettings} = useContext(ButtonSelectContext)
   return (
     <>
     <Page
@@ -32,7 +34,7 @@ const TabOne = () => {
              fullWidth
              >
               {/* <CardContainer></CardContainer> */}
-              <Preview></Preview>
+              <Preview settings={defaultSettings} x></Preview>
             </Page>
           </div>
         </Layout.Section>

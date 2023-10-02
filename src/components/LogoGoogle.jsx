@@ -1,1 +1,1 @@
-export const google_logo = "https://kgo.googleusercontent.com/profile_vrt_raw_bytes_1587515358_10512.png"
+export const google_logo = "https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png"

@@ -9,7 +9,7 @@ const OffieceData = (props) => {
     <i
       key={index}
       className="fa fa-star my-2 "
-      style={{ color: "gold", fontSize: "14px", marginRight: "3px" }}
+      style={{ color: "gold", fontSize: "20px", marginRight: "3px" }}
       aria-hidden="true"
     ></i>
   ));
@@ -29,14 +29,14 @@ const OffieceData = (props) => {
     text={color:'#000'}
  }
  else if(settings?.theme==='custom'){
-    cardbody={backgroundColor:settings?.cardbody}
+    cardbody={backgroundColor:settings?.cardbg}
     text={color:settings?.text}
  }
   return (
     <>
-        <div className='d-flex align-item-center justify-content-center' style={{...cardbody,width:'17rem'}}>
+        <div className='d-flex align-item-center justify-content-center py-2' style={{...cardbody,width:'17rem'}}>
                 <div className='d-flex flex-lg-column flex-md-row flex-xl-row'>
-                <div className=''>
+                <div className='px-2'>
 
                 <Thumbnail 
                 source={data[0]?.photo}

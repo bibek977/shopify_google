@@ -25,7 +25,7 @@ const Card4Container = (props) => {
     text={color:'#000'}
  }
  else if(settings?.theme==='custom'){
-    cardbody={backgroundColor:settings?.cardbody}
+    cardbody={backgroundColor:settings?.cardbg}
     text={color:settings?.text}
  }
   return (

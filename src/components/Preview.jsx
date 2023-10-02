@@ -10,26 +10,27 @@ import ViewReviewAll from './ViewReviewAll'
 import { ButtonSelectContext } from './ButtonSelect'
 import { ApiDataContext } from './ContextData'
 
-const Preview = () => {
-  const {settings,setSettings} = useContext(ButtonSelectContext)
+const Preview = (props) => {
+  const {settings,setSettings} = props
+  // const {settings,setSettings} = useContext(ButtonSelectContext)
   const {apiData,officeData}=useContext(ApiDataContext)
-  let cardbody
+  let cardbg
   let text
   if (settings?.theme === 'dark') {
-    cardbody = {backgroundColor:'#000'};
+    cardbg = {backgroundColor:'#000'};
     text = {color : '#fff'};
   }
   else if(settings?.theme==='light') {
-    cardbody = {backgroundColor:'white'};
+    cardbg = {backgroundColor:'white'};
     text = {color : '#000'};
   }
   else if(settings?.theme==='transparent'){
   
-    cardbody={background:''}
+    cardbg={backgroundColor:"#000"}
     text={color:'#000'}
  }
  else if(settings?.theme==='custom'){
-    cardbody={backgroundColor:settings?.cardbody}
+    cardbg={backgroundColor:settings?.cardbg}
     text={color:settings?.text}
  }
 
@@ -60,7 +61,7 @@ const Preview = () => {
  
   return (
     <>
-    <div  className='p-3'>
+    <div  className='' style={{position:'relative'}}>
 
         <WriteReview settings={settings} setSettings={setSettings}></WriteReview>
 

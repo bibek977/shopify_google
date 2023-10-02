@@ -1,5 +1,6 @@
 import { Select, Text } from '@shopify/polaris';
 import React, { useCallback } from 'react';
+import { CustomColor } from './CustomColor';
 
 const FormInput = (props) => {
 
@@ -37,22 +38,23 @@ const FormInput = (props) => {
     (value)=> setSettings((prev)=>({
       ...prev,
       minratings : value
-    })),[])
+    })),[setSettings])
   const handleDateChange = useCallback(
     (value)=> setSettings((prev)=>({
       ...prev,
       dateformat : value
-    })),[])
+    })),[setSettings])
   const handleAlignChange = useCallback(
     (value)=> setSettings((prev)=>({
       ...prev,
       align : value
-    })),[])
+    })),[setSettings])
   const handleThemeChange = useCallback(
     (value)=> setSettings((prev)=>({
       ...prev,
       theme : value
-    })),[])
+    })),[setSettings])
+
 
   return (
 
@@ -87,7 +89,7 @@ const FormInput = (props) => {
         </span>
       </div>
       <div className="d-flex justify-content-start mb-3">
-        <label className="w-50">
+        <label className="w-50" htmlFor='align'>
           <Text>Align</Text>
         </label>
         <span className="w-50">
@@ -101,7 +103,7 @@ const FormInput = (props) => {
         </span>
       </div>
       <div className="d-flex justify-content-start mb-3">
-        <label className="w-50">
+        <label className="w-50" htmlFor='theme'>
           <Text>Theme</Text>
         </label>
         <span className="w-50">
@@ -112,6 +114,11 @@ const FormInput = (props) => {
           onChange={handleThemeChange}
           >
           </Select>
+          {settings?.theme==='custom'?
+          <CustomColor></CustomColor>
+          :
+          ""
+        }
         </span>
       </div>
 

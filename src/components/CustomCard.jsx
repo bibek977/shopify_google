@@ -9,7 +9,7 @@ const CustomCard = (props) => {
     <i
       key={index}
       className="fa fa-star my-2 "
-      style={{ color: "gold", fontSize: "14px", marginRight: "3px" }}
+      style={{ color: "gold", fontSize: "20px", marginRight: "3px" }}
       aria-hidden="true"
     ></i>
   ));
@@ -33,7 +33,7 @@ const CustomCard = (props) => {
   }
   else if(settings?.theme==='transparent'){
   
-    cardbody={background:''}
+    cardbody={background:'#000'}
     text={color:'#000'}
  }
  else if(settings?.theme==='custom'){
@@ -47,7 +47,7 @@ const CustomCard = (props) => {
   return (
     <>
       <Box id="CardBody">
-        <div className="p-3 mb-5 mt-2" style={{...cardbody,height:'250px'}} >
+        <div className="p-3 mb-5 mt-2" style={{...cardbody,height:'250px',width:'100%'}} >
         <HorizontalStack align="space-between">
           <HorizontalStack>
           {settings?.ShowReviewersPhoto?
@@ -56,16 +56,16 @@ const CustomCard = (props) => {
             </div>
             : ""
           }
-            <div className="mb-lg-2 mb-1 ms-1" style={text} >
+            <div className="mb-lg-2 mb-1 ms-1 px-2" style={text} >
             {settings?.ShowReviewersName?
-              <Text as="p" variant="headingSm">
+              <Text as="p" variant="headingMd">
                 {data.name}
               </Text>
               :
               ""
             }
              <div >
-             <Text variant="bodySm" as="p">
+             <Text variant="bodyMd" as="p">
               {settings?.dateformat==='my'?
                 data.date
                 :
