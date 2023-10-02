@@ -3,12 +3,14 @@ import React, { useContext, useEffect } from 'react'
 import FormInput from '../components/FormInput'
 import FormCheckBox from '../components/FormCheckBox'
 import { ButtonSelectContext } from '../components/ButtonSelect'
+import axios from 'axios'
 
 const FormContainer = () => {
-    const {settings,setSettings,defaultCheckboxes} = useContext(ButtonSelectContext)
+    const {settings,setSettings,previewSettings,setPreviewSettings} = useContext(ButtonSelectContext)
 
     const resetForm = ()=>{
         setSettings({
+            id:1,
             previewId:settings?.previewId,
             HideReviewsWithoutComments: true,
             HideRatingText: false,
@@ -25,9 +27,18 @@ const FormContainer = () => {
         })
     }
 
-    const updateForm = ()=>{
-        setSettings(settings)
-        console.log(settings)
+    const updateForm = (e)=>{
+
+        axios
+        .patch("http://127.0.0.1:8000/settings_api/",settings)
+        // .post("http://127.0.0.1:8000/settings_api/",settings)
+        .then((r)=>{
+            console.log("posted")
+            setPreviewSettings(settings)
+        })
+        .catch((e)=>{
+            console.log(e)
+        })
     }
 
 

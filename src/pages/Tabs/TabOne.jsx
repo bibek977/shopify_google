@@ -14,7 +14,7 @@ const TabOne = () => {
       </Text>
     )
   }
-  const {defaultSettings,setSettings} = useContext(ButtonSelectContext)
+  const {previewSettings,setSettings} = useContext(ButtonSelectContext)
   return (
     <>
     <Page
@@ -34,7 +34,7 @@ const TabOne = () => {
              fullWidth
              >
               {/* <CardContainer></CardContainer> */}
-              <Preview settings={defaultSettings} x></Preview>
+              <Preview settings={previewSettings} x></Preview>
             </Page>
           </div>
         </Layout.Section>
