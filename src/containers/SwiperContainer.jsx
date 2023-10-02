@@ -6,6 +6,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import '../components/SliderContainer.css';
 import CustomCard from '../components/CustomCard';
+import { useEffect, useRef } from 'react';
 
 const SwiperContainer = (props) => {
   const { data, settings, setSettings } = props;
@@ -27,6 +28,21 @@ const SwiperContainer = (props) => {
     cardbody={backgroundColor:settings?.cardbody}
     text={color:settings?.text}
  }
+
+ const autoplays = useRef(null)
+useEffect(()=>{
+  document.querySelectorAll('.swiper-pagination-bullet').forEach(bullet=>{
+    bullet.style.background=text.color
+  })
+
+  if(autoplays.current && settings.AutoPlay){
+    autoplays.current.swiper.autoplay.start();
+  }else{
+    autoplays.current.swiper.autoplay.stop();
+  }
+},[autoplays,settings])
+
+
   
   return (
     <div className='swiper-custom mx-5'>
@@ -38,6 +54,13 @@ const SwiperContainer = (props) => {
         pagination={{ clickable: true, el: '.swiper-pagination-1' }}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log('slide change')}
+        autoplay={{
+          delay:1000,
+          disableOnInteraction: false,
+          
+        }}
+        ref={autoplays}
+
         breakpoints={{
           1200: {
             slidesPerView: 3,
