@@ -1,11 +1,35 @@
 import { Card, Page,Button,Divider, Form, FormLayout } from '@shopify/polaris'
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import FormInput from '../components/FormInput'
 import FormCheckBox from '../components/FormCheckBox'
 import { ButtonSelectContext } from '../components/ButtonSelect'
 
 const FormContainer = () => {
-    const {settings,setSettings} = useContext(ButtonSelectContext)
+    const {settings,setSettings,defaultCheckboxes} = useContext(ButtonSelectContext)
+
+    const resetForm = ()=>{
+        setSettings({
+            previewId:settings?.previewId,
+            HideReviewsWithoutComments: true,
+            HideRatingText: false,
+            ShowReviewersPhoto: true,
+            ShowReviewersName: true,
+            ShowViewAllReviewsLink: false,
+            ShowWriteReviewButton: false,
+            AutoPlay: false,
+            EnableHyperLink: false,
+            minratings: '5',
+            dateformat: "my",
+            align: "left",
+            theme: "light",
+        })
+    }
+
+    const updateForm = ()=>{
+        setSettings(settings)
+        console.log(settings)
+    }
+
 
   return (
     <>
@@ -16,8 +40,8 @@ const FormContainer = () => {
                 <Page
                 fullWidth
                 title='Widgets Settings'
-                primaryAction={<Button primary >Update</Button>}
-                secondaryActions={<Button>Reset to default</Button>}
+                primaryAction={<Button primary onClick={updateForm} >Update</Button>}
+                secondaryActions={<Button onClick={resetForm}>Reset to default</Button>}
                 >
                 </Page>
 
