@@ -31,7 +31,7 @@ function Card6Container(props) {
   }
   else if(settings?.theme==='transparent'){
   
-    cardbody={background:''}
+    cardbody={background:'none'}
     text={color:'#000'}
  }
  else if(settings?.theme==='custom'){

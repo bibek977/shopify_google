@@ -25,6 +25,8 @@ const Swiper3Container = (props) => {
     text = {color : '#000'};
   }
   else if(settings?.theme==='transparent'){
+    cardbody={background:'white'}
+    text={color:'#000'}
 
  }
  else if(settings?.theme==='custom'){

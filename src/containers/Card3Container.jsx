@@ -19,8 +19,8 @@ const Card3Container = (props) => {
   }
   else if(settings?.theme==='transparent'){
   
-    cardbody={background:'#000'}
-    text={color:'#000'}
+    cardbody={background:'none'}
+    text={color:'#fff'}
  }
  else if(settings?.theme==='custom'){
     cardbody={backgroundColor:settings?.cardbg}

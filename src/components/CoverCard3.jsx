@@ -15,6 +15,8 @@ const CoverCard3 = (props) => {
     text = {color : 'black'};
   }
   else if(settings?.theme==='transparent'){
+    cardbody = {backgroundColor:'white'};
+    text = {color : '#000'};
 
  }
  else if(settings?.theme==='custom'){
