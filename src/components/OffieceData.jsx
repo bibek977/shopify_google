@@ -3,8 +3,8 @@ import { Text, Thumbnail } from '@shopify/polaris'
 
 const OffieceData = (props) => {
   const {data,settings,setSettings} = props 
-  console.log(data)
-  console.log(props)
+  // console.log(data)
+  // console.log(props)
   const stars = Array.from({ length: data[0]?.rate }, (_, index) => (
     <i
       key={index}

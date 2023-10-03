@@ -11,7 +11,7 @@ export const ApiDataProvider = ({children}) => {
         axios
           .get("http://127.0.0.1:8000/api/")
           .then((r)=>{
-            console.log(r.data.company)
+            // console.log(r.data.company)
             const {data} = r.data
             setApiData(data)
             setOfficeData(r?.data?.company)

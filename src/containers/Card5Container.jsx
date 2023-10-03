@@ -45,7 +45,7 @@ function Card5Container(props) {
     <Card>
 
       <div onClick={handleShow} className="me-2 office-width">
-        <div style={cardbody} className='py-4'>
+        <div style={cardbody} className=''>
 
         <CoverCard data={officeData} settings={settings} setSettings={setSettings}></CoverCard>
         </div>

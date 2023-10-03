@@ -54,8 +54,8 @@ useEffect(()=>{
         slidesPerView={3}
         navigation={{ clickable: true, nextEl: '.swiper-next-1', prevEl: '.swiper-prev-1' }}
         pagination={{ clickable: true, el: '.swiper-pagination-1' }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log('slide change')}
+        // onSwiper={(swiper) => console.log(swiper)}
+        // onSlideChange={() => console.log('slide change')}
         autoplay={{
           delay:1000,
           disableOnInteraction: false,

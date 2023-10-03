@@ -1,11 +1,12 @@
 import { Button, Page } from '@shopify/polaris'
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import CardContainer from './CardContainer'
 import { ButtonSelectContext } from '../components/ButtonSelect'
 import { ApiDataContext } from '../components/ContextData'
+import axios from 'axios'
 
 const Review1Container = () => {
-  const {defaultSettings,setDefaultSettings,settings,setSettings} = useContext(ButtonSelectContext)
+  const {defaultSettings,setDefaultSettings,settings,setSettings,setPreviewSettings} = useContext(ButtonSelectContext)
   const {apiData}=useContext(ApiDataContext)
 
   const clickedButton = ()=>{
@@ -14,6 +15,14 @@ const Review1Container = () => {
       previewId:1
     }))    
   }
+  useEffect(()=>{
+    axios
+    .patch("http://127.0.0.1:8000/settings_api/",settings)
+    .then(()=>{
+      setPreviewSettings(settings)
+    })
+
+  },[clickedButton])
 
   return (
     <>

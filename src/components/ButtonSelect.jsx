@@ -56,7 +56,7 @@ export const ButtonSelectProvider = ({children}) => {
         .then((r)=>{
           console.log('settings data fetched')
           const {data} = r
-          console.log(data[0])
+          // console.log(data[0])
           setSettings(data[0])
           setPreviewSettings(data[0])
           // console.log(settings)

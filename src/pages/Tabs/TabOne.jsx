@@ -34,7 +34,7 @@ const TabOne = () => {
              fullWidth
              >
               {/* <CardContainer></CardContainer> */}
-              <Preview settings={previewSettings} x></Preview>
+              <Preview settings={previewSettings}></Preview>
             </Page>
           </div>
         </Layout.Section>

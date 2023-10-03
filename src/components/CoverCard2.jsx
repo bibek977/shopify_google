@@ -33,10 +33,13 @@ const CoverCard2 = (props) => {
  }
   return (
     
-        <VerticalStack align='center'>
-          <Text>
-            <h4 className='text-center' style={text}>Excellent</h4>
+        <VerticalStack align='center' inlineAlign='center'>
+          <div style={text} className='text-center'>
+
+          <Text variant='headingXl' as='h2'>
+           Excellent
           </Text>
+          </div>
           <div className='text-center'>
             {stars}
           </div>
@@ -56,7 +59,7 @@ const CoverCard2 = (props) => {
                     </p> 
                   }
           </Text>
-          <div className="img text-center">
+          <div className="img">
             <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" width="100px" alt="" />
           </div>
           

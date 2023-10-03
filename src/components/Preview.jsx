@@ -37,19 +37,19 @@ const Preview = (props) => {
    let newData = apiData;
 
    if (settings?.minratings === '4') {
-     newData = apiData?.filter((item) => item.star <= 4)
+     newData = apiData?.filter((item) => item.star >= 4)
    }
    else if (settings?.minratings === '3') {
-     newData = apiData?.filter((item) => item.star <= 3);
+     newData = apiData?.filter((item) => item.star >= 3);
    }
    else if (settings?.minratings === '5') {
-     newData = apiData?.filter((item) => item.star <= 5);
+     newData = apiData?.filter((item) => item.star >= 5);
    }
    else if (settings?.minratings === '2') {
-     newData = apiData?.filter((item) => item.star <= 2);
+     newData = apiData?.filter((item) => item.star >= 2);
    }
    else if (settings?.minratings === '1') {
-     newData = apiData?.filter((item) => item.star <= 1);
+     newData = apiData?.filter((item) => item.star >= 1);
    }
 
    let finalData = newData;

@@ -27,7 +27,8 @@ const WriteReview = (props) => {
     <>
     { settings?.ShowWriteReviewButton ?
 
-    <div className='d-flex justify-content-end' style={{position:'absolute',right:'1rem',top:'.3rem'}}>
+    // <div className='d-flex justify-content-end' style={{position:'absolute',right:'1rem',top:'.3rem'}}>
+    <div className='d-flex justify-content-end'>
 
     <Button className='bg-primary m-2 '>
         <a style={{textDecoration:'none',color:'white',paddingLeft:'.5rem'}} href="https://www.google.com/maps/@27.9308066,6.7369589,3z?entry=ttu">

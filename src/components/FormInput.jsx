@@ -60,7 +60,7 @@ const FormInput = (props) => {
 
     <div className="w-100">
 
-      <div className="d-flex justify-content-start mb-3">
+      <div className="d-flex justify-content-start mb-3 flex-md-row flex-column">
         <label className="w-50">
           <Text>Minimum Rating</Text>
         </label>
@@ -74,7 +74,7 @@ const FormInput = (props) => {
           </Select>
         </span>
       </div>
-      <div className="d-flex justify-content-start mb-3">
+      <div className="d-flex justify-content-start mb-3 flex-md-row flex-column">
         <label className="w-50">
           <Text>Select Date format</Text>
         </label>
@@ -88,7 +88,7 @@ const FormInput = (props) => {
           </Select>
         </span>
       </div>
-      <div className="d-flex justify-content-start mb-3">
+      <div className="d-flex justify-content-start mb-3 flex-md-row flex-column">
         <label className="w-50" htmlFor='align'>
           <Text>Align</Text>
         </label>
@@ -102,7 +102,7 @@ const FormInput = (props) => {
           </Select>
         </span>
       </div>
-      <div className="d-flex justify-content-start mb-3">
+      <div className="d-flex justify-content-start mb-3 flex-md-row flex-column">
         <label className="w-50" htmlFor='theme'>
           <Text>Theme</Text>
         </label>

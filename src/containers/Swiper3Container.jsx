@@ -56,8 +56,8 @@ const Swiper3Container = (props) => {
       slidesPerView={3}
       navigation = {{clickable:true,nextEl:".swiper-next-3", prevEl:".swiper-prev-3"}}
       pagination={{ clickable: true, el:".swiper-pagination-3" }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
+      // onSwiper={(swiper) => console.log(swiper)}
+      // onSlideChange={() => console.log('slide change')}
       autoplay={{
         delay:1000,
         disableOnInteraction: false,

@@ -15,7 +15,7 @@ const FormCheckBox = (props) => {
 
 
     <div className="w-100">
-      <div className="w-100 mx-5 mb-2">
+      <div className="w-100 mx-md-5 mb-2">
         <Checkbox
         label="Hide Reviews without Comments"
         checked={settings?.HideReviewsWithoutComments}
@@ -23,7 +23,7 @@ const FormCheckBox = (props) => {
         >
         </Checkbox>
       </div>
-      <div className="w-100 mx-5 mb-2">
+      <div className="w-100 mx-md-5 mb-2">
         <Checkbox
         label="Hide Rating Text"
         checked={settings?.HideRatingText}
@@ -31,7 +31,7 @@ const FormCheckBox = (props) => {
         >
         </Checkbox>
       </div>
-      <div className="w-100 mx-5 mb-2">
+      <div className="w-100 mx-md-5 mb-2">
         <Checkbox
         label="Show Reviewers Photo"
         checked={settings?.ShowReviewersPhoto}
@@ -39,7 +39,7 @@ const FormCheckBox = (props) => {
         >
         </Checkbox>
       </div>
-      <div className="w-100 mx-5 mb-2">
+      <div className="w-100 mx-md-5 mb-2">
         <Checkbox
         label="Show Reviewers Name"
         checked={settings?.ShowReviewersName}
@@ -47,7 +47,7 @@ const FormCheckBox = (props) => {
         >
         </Checkbox>
       </div>
-      <div className="w-100 mx-5 mb-2">
+      <div className="w-100 mx-md-5 mb-2">
         <Checkbox
         label="Show View All Reviews Link"
         checked={settings?.ShowViewAllReviewsLink}
@@ -55,7 +55,7 @@ const FormCheckBox = (props) => {
         >
         </Checkbox>
       </div>
-      <div className="w-100 mx-5 mb-2">
+      <div className="w-100 mx-md-5 mb-2">
         <Checkbox
         label="Show Write a Review Button"
         checked={settings?.ShowWriteReviewButton}
@@ -63,7 +63,7 @@ const FormCheckBox = (props) => {
         >
         </Checkbox>
       </div>
-      <div className="w-100 mx-5 mb-2">
+      <div className="w-100 mx-md-5 mb-2">
         <Checkbox
         label="Auto Play"
         checked={settings?.AutoPlay}
@@ -71,7 +71,7 @@ const FormCheckBox = (props) => {
         >
         </Checkbox>
       </div>
-      <div className="w-100 mx-5 mb-2">
+      <div className="w-100 mx-md-5 mb-2">
         <Checkbox
         label="Enable Hyper Link"
         checked={settings?.EnableHyperLink}

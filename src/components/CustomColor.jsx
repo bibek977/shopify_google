@@ -16,7 +16,7 @@ export const CustomColor = () => {
     position:'absolute',
     bottom:'4rem',
     zIndex:100,
-    left:"5rem"
+    left:"2rem"
   }
   const [showPicker,setShowPicker] = useState(false)
   const handleClickShow = ()=>{
@@ -58,17 +58,17 @@ export const CustomColor = () => {
   return (
     <div className='mt-2 w-100' style={{position:'relative'}}>
         <div className='d-flex flex-xl-row flex-column  justify-content-around'>
-          <div className='d-flex flex-row '>
+          <div className='d-flex flex-md-row flex-column'>
 
           <div style={{...colorbox,backgroundColor:initialColor}} onClick={handleClickShow}> </div>
           <p className='p-1'>Background</p>
           </div>
-          <div className='d-flex flex-row'>
+          <div className='d-flex flex-md-row flex-column'>
 
           <div style={{...colorbox,backgroundColor:initialTextColor}} onClick={handleClickTextShow}> </div>
           <p  className='p-1'>Text</p>
           </div>
-          <div className='d-flex flex-row'>
+          <div className='d-flex flex-md-row flex-column'>
 
           <div style={{...colorbox,backgroundColor:initialBgColor}} onClick={handleClickBgShow}> </div>
           <p  className='p-1'>Card Background</p>
@@ -77,7 +77,7 @@ export const CustomColor = () => {
         {showPicker?
         <div style={colorpicker}>
 
-        <ChromePicker color={initialColor} onChange={handleGetColor}></ChromePicker>
+        <ChromePicker color={initialColor} onChange={handleGetColor} ></ChromePicker>
         </div>
       :
       ""}

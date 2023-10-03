@@ -5,7 +5,7 @@ const Swiper4Container = (props) => {
     const {data,settings,setSettings} = props
   return (
     <>
-    <div className="custom-scrollbar">
+    <div className="custom-scrollbar border-0">
     <div className="scroll-content">
 
 

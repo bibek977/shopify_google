@@ -33,7 +33,7 @@ const CoverCard3 = (props) => {
     ></i>
   ));
   return (
-    <div style={cardbody} className='w-100'>
+    <div style={cardbody} className='w-100 py-3 px-5 mx-3'>
 
 
         <VerticalStack align='center'>
